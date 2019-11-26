@@ -1,0 +1,42 @@
+{
+    "window.menuBarVisibility": "toggle",
+    "workbench.colorTheme": "Monokai",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "editor.fontFamily": "'SF Mono Powerline','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontSize": 13,
+    "editor.dragAndDrop": false,
+    "editor.showFoldingControls": "always",
+    "editor.cursorSmoothCaretAnimation": true,
+    "diffEditor.renderSideBySide": false,
+    "editor.minimap.enabled": false,
+    "files.autoGuessEncoding": true,
+    "files.hotExit": "off",
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "workbench.enableExperiments": false,
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.settings.enableNaturalLanguageSearch": false,
+    "explorer.confirmDragAndDrop": false,
+    "search.showLineNumbers": true,
+    "terminal.external.linuxExec": "urxvt",
+    "terminal.integrated.copyOnSelection": true,
+    "C_Cpp.clang_format_fallbackStyle": "LLVM",
+    "editor.suggestSelection": "first",
+    "editor.formatOnSave": true,
+    "git.enableSmartCommit": true,
+    "git.rebaseWhenSync": true,
+    "npm.enableRunFromFolder": true,
+    "npm.enableScriptExplorer": true,
+    "eslint.alwaysShowStatus": true,
+    "vetur.format.enable": false,
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        {
+            "language": "vue",
+            "autoFix": true
+        }
+    ],
+    "eslint.autoFixOnSave": true
+}
