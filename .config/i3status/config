@@ -16,6 +16,7 @@ general {
 }
 
 order += "disk /"
+order += "wireless _first_"
 order += "memory"
 order += "battery all"
 order += "cpu_temperature 0"

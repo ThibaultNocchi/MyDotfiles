@@ -5,7 +5,6 @@
     "editor.fontFamily": "'SF Mono Powerline','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.fontSize": 13,
     "editor.dragAndDrop": false,
-    "editor.showFoldingControls": "always",
     "editor.cursorSmoothCaretAnimation": true,
     "diffEditor.renderSideBySide": false,
     "editor.minimap.enabled": false,
@@ -26,17 +25,27 @@
     "editor.formatOnSave": true,
     "git.enableSmartCommit": true,
     "git.rebaseWhenSync": true,
-    "npm.enableRunFromFolder": true,
-    "npm.enableScriptExplorer": true,
     "eslint.alwaysShowStatus": true,
     "vetur.format.enable": false,
+    "eslint.options": {
+        "extensions": [
+            ".js",
+            ".vue"
+        ]
+    },
     "eslint.validate": [
         "javascript",
         "javascriptreact",
         {
             "language": "vue",
             "autoFix": true
+        },
+        {
+            "language": "html",
+            "autoFix": true
         }
     ],
-    "eslint.autoFixOnSave": true
+    "eslint.autoFixOnSave": true,
+    "explorer.confirmDelete": false,
+    "git.confirmSync": false,
 }

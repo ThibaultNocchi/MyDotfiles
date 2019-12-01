@@ -184,7 +184,6 @@ exec --no-startup-id xinput set-prop 11 313 0.55 # Sensi
 exec --no-startup-id xinput set-prop 11 293 1 # Tap to click
 exec --no-startup-id xinput set-prop 11 301 1 # Natural scroll
 exec --no-startup-id redshift -l geoclue2
-exec --no-startup-id nm-applet
 
 bindsym $mod+n exec --no-startup-id firefox
 bindsym $mod+b exec --no-startup-id thunar
