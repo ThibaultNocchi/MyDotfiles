@@ -10,8 +10,8 @@ if [[ $# -eq 0 ]]; then
 fi
 DIFF=$((PERCENT_STEP*$1))
 NEW=$((DIFF+CURRENT))
-if [[ $NEW -gt 7500 ]]; then
-	NEW=7500
+if [[ $NEW -gt $MAX ]]; then
+	NEW=$MAX
 elif [[ $NEW -lt $MIN ]]; then
 	NEW=$MIN
 fi
