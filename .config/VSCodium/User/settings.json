@@ -48,4 +48,5 @@
     "eslint.autoFixOnSave": true,
     "explorer.confirmDelete": false,
     "git.confirmSync": false,
+    "window.zoomLevel": 0,
 }

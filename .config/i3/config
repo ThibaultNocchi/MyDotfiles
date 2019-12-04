@@ -169,8 +169,9 @@ bar {
         status_command i3status
         #status_command customi3bar
 	position top
-	font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-	font pango:DejaVu Sans Mono 9
+	#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+	#font pango:DejaVu Sans Mono 9
+	font pango:SFMonoPowerline 9
 }
 
 # Custom
