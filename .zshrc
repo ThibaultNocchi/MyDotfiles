@@ -32,6 +32,7 @@ alias gst="git status"
 alias gcm="git commit -m"
 alias sdn="shutdown now"
 alias sudo="sudo "
+alias code="codium ."
 
 alias hdmi-mirror="xrandr --output HDMI-1 --same-as eDP-1"
 alias hdmi-off="xrandr --output HDMI-1 --off"
