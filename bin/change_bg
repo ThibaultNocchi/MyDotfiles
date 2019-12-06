@@ -1,2 +1,2 @@
 # feh --randomize --bg-fill ~/Pictures/Fonds\ d\'écrans\ 16.9/* 
-/usr/local/bin/wal -i /home/thibault/Pictures/Fonds\ d\'écrans\ 16.9/ -e -q
+/usr/local/bin/wal -i /home/thibault/Pictures/Fonds\ d\'écrans\ 16.9/ -q
