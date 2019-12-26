@@ -13,7 +13,7 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 fpath+=("$HOME/.zsh/pure")
-PATH=$PATH:/snap/bin
+PATH=$PATH:/snap/bin:~/.local/bin
 
 source $HOME/antigen.zsh
 antigen use oh-my-zsh

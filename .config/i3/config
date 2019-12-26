@@ -208,13 +208,13 @@ popup_during_fullscreen smart
 
 exec --no-startup-id compton --config ~/.config/compton/compton.conf -b
 exec --no-startup-id /usr/local/bin/change_bg
-exec --no-startup-id xinput set-prop 11 313 0.55 # Sensi
-exec --no-startup-id xinput set-prop 11 293 1 # Tap to click
-exec --no-startup-id xinput set-prop 11 301 1 # Natural scroll
+exec --no-startup-id xinput set-prop 11 327 0.55 # Sensi
+exec --no-startup-id xinput set-prop 11 307 1 # Tap to click
+exec --no-startup-id xinput set-prop 11 315 1 # Natural scroll
 exec --no-startup-id redshift -l geoclue2
 
 bindsym $mod+n exec --no-startup-id firefox
-bindsym $mod+b exec --no-startup-id thunar
+bindsym $mod+b exec --no-startup-id pcmanfm-qt
 bindsym $mod+c exec --no-startup-id codium
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
