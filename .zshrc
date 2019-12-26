@@ -33,8 +33,8 @@ alias gcm="git commit -m"
 alias sdn="shutdown now"
 alias sudo="sudo "
 alias code="codium ."
-
-alias hdmi-mirror="xrandr --output HDMI-1 --same-as eDP-1"
-alias hdmi-off="xrandr --output HDMI-1 --off"
+alias vup="vagrant up"
+alias vhalt="vagrant halt"
+alias vssh="vagrant ssh"
 
 source ~/.profile
