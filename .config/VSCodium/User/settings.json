@@ -20,7 +20,6 @@
     "search.showLineNumbers": true,
     "terminal.external.linuxExec": "urxvt",
     "terminal.integrated.copyOnSelection": true,
-    "C_Cpp.clang_format_fallbackStyle": "LLVM",
     "editor.suggestSelection": "first",
     "editor.formatOnSave": true,
     "git.enableSmartCommit": true,
@@ -49,4 +48,9 @@
     "explorer.confirmDelete": false,
     "git.confirmSync": false,
     "window.zoomLevel": 0,
+    "C_Cpp.clang_format_fallbackStyle": "LLVM",
+    "polacode.backgroundColor": "white",
+    "polacode.transparentBackground": true,
+    "polacode.target": "snippet",
+    "polacode.shadow": "",
 }

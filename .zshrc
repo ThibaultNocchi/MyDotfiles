@@ -36,5 +36,8 @@ alias code="codium ."
 alias vup="vagrant up"
 alias vhalt="vagrant halt"
 alias vssh="vagrant ssh"
+alias hdmi="xrandr --auto; xrandr --output HDMI-1 --right-of eDP-1"
+alias docker="sudo docker"
+alias docker-compose="sudo docker-compose"
 
 source ~/.profile
