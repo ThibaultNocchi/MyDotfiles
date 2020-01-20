@@ -6,7 +6,6 @@
     "editor.fontSize": 13,
     "editor.dragAndDrop": false,
     "editor.cursorSmoothCaretAnimation": true,
-    "diffEditor.renderSideBySide": false,
     "editor.minimap.enabled": false,
     "files.autoGuessEncoding": true,
     "files.hotExit": "off",
@@ -53,4 +52,5 @@
     "polacode.transparentBackground": true,
     "polacode.target": "snippet",
     "polacode.shadow": "",
+    "git.autofetch": true,
 }

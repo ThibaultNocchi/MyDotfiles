@@ -39,5 +39,7 @@ alias vssh="vagrant ssh"
 alias hdmi="xrandr --auto; xrandr --output HDMI-1 --right-of eDP-1"
 alias docker="sudo docker"
 alias docker-compose="sudo docker-compose"
+alias dcu="sudo docker-compose up -d"
+alias dcd="sudo docker-compose down"
 
 source ~/.profile
