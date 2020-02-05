@@ -53,4 +53,8 @@
     "polacode.target": "snippet",
     "polacode.shadow": "",
     "git.autofetch": true,
+    "latex-workshop.intellisense.package.enabled": true,
+    "latex-workshop.latex.autoBuild.run": "never",
+    "prolog.dialect": "ecl",
+    "prolog.executablePath": "/home/thibault/Programmation/Eclipse_7.0_51/bin/x86_64_linux/eclipse",
 }
