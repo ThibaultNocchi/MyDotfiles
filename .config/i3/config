@@ -168,7 +168,7 @@ exec --no-startup-id xrdb ~/.cache/wal/colors.Xresources
 set_from_resource $background i3wm.background #272822
 set_from_resource $foreground i3wm.foreground #FFFFFF
 set_from_resource $cursor i3wm.cursor
-set_from_resource $color0 i3wm.color0 #272822 
+set_from_resource $color0 i3wm.color0 #272822
 set_from_resource $color1 i3wm.color1
 set_from_resource $color2 i3wm.color2
 set_from_resource $color3 i3wm.color3
@@ -224,3 +224,4 @@ bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 bindsym XF86MonBrightnessUp exec --no-startup-id sudo change_brightness 5
 bindsym XF86MonBrightnessDown exec --no-startup-id sudo change_brightness -5
 bindsym --release Print exec --no-startup-id maim -s /home/thibault/Pictures/print_screen_$(date +%F-%H-%M-%S).png
+bindsym $mod+Shift+s exec "i3-nagbar -t warning -m 'You pressed the shutdown shortcut. Do you really want to shutdown?' -B 'Yes, shutdown now' 'shutdown now'"
