@@ -216,7 +216,7 @@ exec --no-startup-id redshift -l geoclue2
 bindsym $mod+n exec --no-startup-id firefox
 bindsym $mod+shift+n exec --no-startup-id firefox -private-window
 bindsym $mod+b exec --no-startup-id pcmanfm-qt
-bindsym $mod+c exec --no-startup-id codium
+bindsym $mod+c exec --no-startup-id /snap/bin/codium
 bindsym $mod+x exec i3lock -i $(ls /home/thibault/Pictures/BG/*.png |sort -R |tail -1)
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
