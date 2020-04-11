@@ -61,4 +61,5 @@
         "source.fixAll.eslint": true
     },
     "vetur.completion.tagCasing": "initial",
+    "python.dataScience.askForKernelRestart": false,
 }
