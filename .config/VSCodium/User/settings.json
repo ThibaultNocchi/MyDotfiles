@@ -25,24 +25,6 @@
     "git.rebaseWhenSync": true,
     "eslint.alwaysShowStatus": true,
     "vetur.format.enable": false,
-    "eslint.options": {
-        "extensions": [
-            ".js",
-            ".vue"
-        ]
-    },
-    "eslint.validate": [
-        "javascript",
-        "javascriptreact",
-        {
-            "language": "vue",
-            "autoFix": true
-        },
-        {
-            "language": "html",
-            "autoFix": true
-        }
-    ],
     "explorer.confirmDelete": false,
     "git.confirmSync": false,
     "window.zoomLevel": 0,
@@ -57,9 +39,6 @@
     "prolog.dialect": "ecl",
     "prolog.executablePath": "/home/thibault/Programmation/Eclipse_7.0_51/bin/x86_64_linux/eclipse",
     "workbench.startupEditor": "newUntitledFile",
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
-    },
     "vetur.completion.tagCasing": "initial",
     "python.dataScience.askForKernelRestart": false,
 }
