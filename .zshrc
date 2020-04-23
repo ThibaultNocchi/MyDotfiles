@@ -15,7 +15,7 @@ compinit
 fpath+=("$HOME/.zsh/pure")
 PATH=$PATH:/snap/bin:~/.local/bin
 
-source $HOME/antigen.zsh
+source $HOME/.antigen.zsh
 antigen use oh-my-zsh
 antigen apply
 
@@ -38,6 +38,7 @@ alias docker="sudo docker"
 alias docker-compose="sudo docker-compose"
 alias dcu="sudo docker-compose up -d"
 alias dcd="sudo docker-compose down"
+alias rs="rsync -azv --append --progress"
 
 export EDITOR="vim"
 source ~/.profile
