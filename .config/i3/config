@@ -218,10 +218,11 @@ bindsym $mod+shift+n exec --no-startup-id firefox -private-window
 bindsym $mod+b exec --no-startup-id thunar
 bindsym $mod+c exec --no-startup-id /snap/bin/codium
 bindsym $mod+x exec i3lock -i $(ls /home/thibault/Pictures/BG/*.png |sort -R |tail -1)
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
-bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86MonBrightnessUp exec --no-startup-id sudo change_brightness 5
 bindsym XF86MonBrightnessDown exec --no-startup-id sudo change_brightness -5
 bindsym --release Print exec --no-startup-id maim -s /home/thibault/Pictures/print_screen_$(date +%F-%H-%M-%S).png
 bindsym $mod+Shift+s exec "i3-nagbar -t warning -m 'You pressed the shutdown shortcut. Do you really want to shutdown?' -B 'Yes, shutdown now' 'shutdown now'"
+bindsym $mod+F1 exec --no-startup-id /usr/local/bin/hdmi_enable
