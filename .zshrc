@@ -12,17 +12,17 @@ zstyle :compinstall filename '/home/thibault/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-#fpath+=("$HOME/.zsh/pure")
 PATH=$PATH:/snap/bin:~/.local/bin
+
+if [[ ! -f "$HOME/.antigen.zsh" ]]; then
+	curl -L git.io/antigen > $HOME/.antigen.zsh
+fi
 
 source $HOME/.antigen.zsh
 antigen use oh-my-zsh
 antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure
 antigen apply
-
-#autoload -U promptinit; promptinit
-#prompt pure
 
 (cat ~/.cache/wal/sequences &)
 
