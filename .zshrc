@@ -41,5 +41,7 @@ alias dcu="sudo docker-compose up -d"
 alias dcd="sudo docker-compose down"
 alias rs="rsync -azv --append --progress"
 
+bindkey '^H' backward-kill-word
+
 export EDITOR="vim"
 source ~/.profile
