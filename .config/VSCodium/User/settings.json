@@ -37,8 +37,16 @@
     "latex-workshop.intellisense.package.enabled": true,
     "latex-workshop.latex.autoBuild.run": "never",
     "prolog.dialect": "ecl",
-    "prolog.executablePath": "/home/thibault/Programmation/Eclipse_7.0_51/bin/x86_64_linux/eclipse",
     "workbench.startupEditor": "newUntitledFile",
     "vetur.completion.tagCasing": "initial",
     "python.dataScience.askForKernelRestart": false,
+    "prettier.trailingComma": "none",
+    "prettier.arrowParens": "avoid",
+    "prolog.format.enabled": false,
+    "prolog.linter.run": "never",
+    "cSpell.language": "fr",
+    "python.defaultInterpreterPath": "python3",
+    "python.linting.pylintArgs": [
+        "--load-plugins=pylint_django"
+    ],
 }
