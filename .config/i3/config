@@ -41,7 +41,8 @@ bindsym $mod+q kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec "rofi -modi drun,run -show drun"
 
 # change focus
 bindsym $mod+j focus left
@@ -208,9 +209,9 @@ popup_during_fullscreen smart
 
 exec --no-startup-id compton --config ~/.config/compton/compton.conf -b
 exec --no-startup-id /usr/local/bin/change_bg
-exec --no-startup-id xinput set-prop 11 327 0.55 # Sensi
-exec --no-startup-id xinput set-prop 11 307 1 # Tap to click
-exec --no-startup-id xinput set-prop 11 315 1 # Natural scroll
+exec --no-startup-id xinput set-prop 11 330 0.55 # Accel speed
+exec --no-startup-id xinput set-prop 11 310 1 # Tap to click
+exec --no-startup-id xinput set-prop 11 318 1 # Natural scroll
 exec --no-startup-id redshift -l geoclue2
 
 bindsym $mod+n exec --no-startup-id firefox
