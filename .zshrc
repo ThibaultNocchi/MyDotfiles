@@ -7,7 +7,7 @@ unsetopt appendhistory beep
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename $HOME/.zshrc
+zstyle :compinstall filename '/home/thibault/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -41,8 +41,13 @@ alias dcu="sudo docker-compose up -d"
 alias dcd="sudo docker-compose down"
 alias rs="rsync -azv --append --progress"
 alias python="python3"
+alias bat="batcat"
 
 bindkey '^H' backward-kill-word
-
+bindkey '^[Od' backward-word
+bindkey '^[Oc' forward-word
 export EDITOR="vim"
 source ~/.profile
+
+# opam configuration
+test -r /home/thibault/.opam/opam-init/init.zsh && . /home/thibault/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
