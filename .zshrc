@@ -47,6 +47,7 @@ bindkey '^H' backward-kill-word
 bindkey '^[Od' backward-word
 bindkey '^[Oc' forward-word
 export EDITOR="vim"
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
 source ~/.profile
 
 # opam configuration
