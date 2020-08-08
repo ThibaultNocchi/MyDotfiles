@@ -213,6 +213,7 @@ exec --no-startup-id xinput set-prop 11 330 0.55 # Accel speed
 exec --no-startup-id xinput set-prop 11 310 1 # Tap to click
 exec --no-startup-id xinput set-prop 11 318 1 # Natural scroll
 exec --no-startup-id redshift -l geoclue2
+exec --no-startup-id i3_nagbar_battery 20
 
 bindsym $mod+n exec --no-startup-id firefox
 bindsym $mod+shift+n exec --no-startup-id firefox -private-window
