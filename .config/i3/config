@@ -209,9 +209,9 @@ popup_during_fullscreen smart
 
 exec --no-startup-id compton --config ~/.config/compton/compton.conf -b
 exec --no-startup-id /usr/local/bin/change_bg
-exec --no-startup-id xinput set-prop 11 330 0.55 # Accel speed
-exec --no-startup-id xinput set-prop 11 310 1 # Tap to click
-exec --no-startup-id xinput set-prop 11 318 1 # Natural scroll
+exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" 330 0.55 # Accel speed
+exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" 310 1 # Tap to click
+exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" 318 1 # Natural scroll
 exec --no-startup-id redshift -l geoclue2
 exec --no-startup-id i3_nagbar_battery 20
 

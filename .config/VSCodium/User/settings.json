@@ -49,4 +49,10 @@
     "python.linting.pylintArgs": [
         "--load-plugins=pylint_django"
     ],
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "latex-workshop.message.update.show": false,
+    "java.configuration.checkProjectSettingsExclusions": false,
+    "java.project.importOnFirstTimeStartup": "automatic",
 }
