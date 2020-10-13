@@ -41,7 +41,6 @@ alias dcu="sudo docker-compose up -d"
 alias dcd="sudo docker-compose down"
 alias rs="rsync -azv --append --progress"
 alias python="python3"
-alias bat="batcat"
 
 bindkey '^H' backward-kill-word
 bindkey '^[Od' backward-word
