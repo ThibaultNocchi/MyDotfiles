@@ -41,12 +41,15 @@ alias dcu="sudo docker-compose up -d"
 alias dcd="sudo docker-compose down"
 alias rs="rsync -azv --append --progress"
 alias python="python3"
+alias ncdu="ncdu" # I keep forgetting it
 
 bindkey '^H' backward-kill-word
 bindkey '^[Od' backward-word
 bindkey '^[Oc' forward-word
+
 export EDITOR="vim"
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
+
 source ~/.profile
 
 # opam configuration
