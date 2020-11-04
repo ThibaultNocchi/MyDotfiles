@@ -1,3 +1,3 @@
 #!/bin/bash
-zathura $1 2> /dev/null &
+zathura "$@" 2> /dev/null &
 disown
