@@ -1,5 +1,6 @@
 #!/bin/sh
 RESOLUTION=$(xrandr | awk '/HDMI/{getline;print}' | sed -E 's/^\s*([0-9]+x[0-9]+).*$/\1/g')
 xrandr --output HDMI-1 --primary --mode $RESOLUTION --pos 0x0 --rotate normal --output eDP-1 --off &&
-pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:hdmi-stereo+input:analog-stereo &&
-killall -SIGUSR1 dunst &&
+pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:hdmi-stereo+input:analog-stereo
+sudo systemctl stop redshift.service
+killall -SIGUSR1 dunst

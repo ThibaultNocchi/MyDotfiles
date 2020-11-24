@@ -213,6 +213,7 @@ exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" 330 0.55 # Acc
 exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" 310 1 # Tap to click
 exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" 318 1 # Natural scroll
 exec --no-startup-id i3_nagbar_battery 20
+exec --no-startup-id sudo systemctl start redshift.service
 
 bindsym $mod+n exec --no-startup-id firefox
 bindsym $mod+shift+n exec --no-startup-id firefox -private-window
