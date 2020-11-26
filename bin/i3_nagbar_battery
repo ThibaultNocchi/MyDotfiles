@@ -11,8 +11,8 @@ while true; do
 	CURRENT_BAT=$(upower -i $(upower -e | grep BAT) | grep percentage | sed 's/^.*[^0-9]\([0-9]\+\) \?%.*$/\1/')
 	STATE=$(upower -i $(upower -e | grep BAT) | grep state | sed 's/^.*:[[:space:]]\+\(.*\)$/\1/')	
 
-	echo "Current battery: $CURRENT_BAT%"
-	echo "State: $STATE"
+	#echo "Current battery: $CURRENT_BAT%"
+	#echo "State: $STATE"
 
 	if [ $CURRENT_BAT -lt $THRESHOLD ]; then
 		if [ $STATE = "discharging" ]; then
