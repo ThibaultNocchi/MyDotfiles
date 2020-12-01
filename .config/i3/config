@@ -209,9 +209,10 @@ popup_during_fullscreen smart
 
 exec --no-startup-id picom --experimental-backends -b
 exec --no-startup-id /usr/local/bin/change_bg
-exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" 330 0.55 # Accel speed
-exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" 310 1 # Tap to click
-exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" 318 1 # Natural scroll
+exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" 338 0.55 # Accel speed
+exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" 318 1 # Tap to click
+exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" 326 1 # Natural scroll
+exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" 341 0 0 # Variable speed
 exec --no-startup-id i3_nagbar_battery 20
 exec --no-startup-id sudo systemctl start redshift.service
 
