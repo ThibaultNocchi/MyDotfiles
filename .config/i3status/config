@@ -26,40 +26,40 @@ order += "tztime local"
 
 
 wireless _first_ {
-        format_up = "%quality %essid %ip "
-        format_down = "No WIFI"
+        format_up = "📶%quality %essid %ip "
+        format_down = "📶 🚫"
 }
 
 volume master {
-	format = "♪ %devicename: %volume"
-	format_muted = "♪ %devicename"
+	format = "🎵 %devicename %volume"
+	format_muted = "🎵 %devicename"
 }
 
 battery all {
-        format = "%percentage %remaining"
+        format = "🔋%percentage %remaining"
 	integer_battery_capacity = true
 	threshold_type = "time"
 	low_threshold = 30
 }
 
 tztime local {
-        format = "%d-%m-%Y %H:%M"
+        format = "🕒 %d-%m-%Y %H:%M"
 }
 
 cpu_usage {
-        format = "CPU: %usage"
+        format = "🧠 %usage"
 }
 
 cpu_temperature 0 {
-	format = "%degrees °C"
+	format = "🔥 %degrees°C"
 }
 
 disk "/" {
-        format = "%avail"
+        format = "💾 %avail"
 }
 
 memory {
-	format = "%available"
+	format = "🐏 %available"
 	threshold_degraded = 25%
 	threshold_critical = 12%
 }
