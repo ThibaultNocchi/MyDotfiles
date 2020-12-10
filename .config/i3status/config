@@ -31,8 +31,8 @@ wireless _first_ {
 }
 
 volume master {
-	format = "Vol.: %volume"
-	format_muted = "Vol.: /"
+	format = "♪ %devicename: %volume"
+	format_muted = "♪ %devicename"
 }
 
 battery all {
