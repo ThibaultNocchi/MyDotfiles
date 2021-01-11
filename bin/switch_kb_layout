@@ -1,0 +1,17 @@
+#!/bin/sh
+
+CURRENT=$(setxkbmap -query | grep layout | sed -E 's/layout:[ \t]*(.+)/\1/g')
+
+echo "Current layout: ${CURRENT}"
+
+if [ -n $1 ] && [ "$1" = '-query' ]; then
+    exit 0
+fi
+
+if [ "$CURRENT" = "fr" ]; then
+    setxkbmap -layout us
+    echo "Switched to: \"us\""
+elif [ "$CURRENT" = "us" ]; then
+    setxkbmap -layout fr
+    echo "Switched to: \"fr\""
+fi
