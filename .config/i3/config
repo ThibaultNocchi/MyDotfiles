@@ -34,7 +34,8 @@ floating_modifier $mod
 bindsym $mod+Return exec urxvt
 
 # kill focused window
-bindsym $mod+q kill
+#bindsym $mod+q kill
+bindcode $mod+38 kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run
@@ -48,19 +49,21 @@ bindsym $mod+d exec "rofi -modi drun,run -show drun"
 bindsym $mod+j focus left
 bindsym $mod+k focus down
 bindsym $mod+l focus up
-bindsym $mod+m focus right
+#bindsym $mod+m focus right
+bindcode $mod+47 focus right
 
 # alternatively, you can use the cursor keys:
-#bindsym $mod+Left focus left
-#bindsym $mod+Down focus down
-#bindsym $mod+Up focus up
-#bindsym $mod+Right focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
 
 # move focused window
 bindsym $mod+Shift+j move left
 bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
-bindsym $mod+Shift+m move right
+#bindsym $mod+Shift+m move right
+bindcode $mod+Shift+47 move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -78,8 +81,10 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+a layout stacking
-bindsym $mod+z layout tabbed
+#bindsym $mod+a layout stacking
+bindcode $mod+24 layout stacking
+#bindsym $mod+z layout tabbed
+bindcode $mod+25 layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -108,28 +113,48 @@ set $ws9 "9"
 set $ws10 "10"
 
 # switch to workspace
-bindsym $mod+ampersand workspace $ws1
-bindsym $mod+eacute workspace $ws2
-bindsym $mod+quotedbl workspace $ws3
-bindsym $mod+apostrophe workspace $ws4
-bindsym $mod+parenleft workspace $ws5
-bindsym $mod+minus workspace $ws6
-bindsym $mod+egrave workspace $ws7
-bindsym $mod+underscore workspace $ws8
-bindsym $mod+ccedilla workspace $ws9
-bindsym $mod+agrave workspace $ws10
+#bindsym $mod+ampersand workspace $ws1
+#bindsym $mod+eacute workspace $ws2
+#bindsym $mod+quotedbl workspace $ws3
+#bindsym $mod+apostrophe workspace $ws4
+#bindsym $mod+parenleft workspace $ws5
+#bindsym $mod+minus workspace $ws6
+#bindsym $mod+egrave workspace $ws7
+#bindsym $mod+underscore workspace $ws8
+#bindsym $mod+ccedilla workspace $ws9
+#bindsym $mod+agrave workspace $ws10
+bindcode $mod+10 workspace $ws1
+bindcode $mod+11 workspace $ws2
+bindcode $mod+12 workspace $ws3
+bindcode $mod+13 workspace $ws4
+bindcode $mod+14 workspace $ws5
+bindcode $mod+15 workspace $ws6
+bindcode $mod+16 workspace $ws7
+bindcode $mod+17 workspace $ws8
+bindcode $mod+18 workspace $ws9
+bindcode $mod+19 workspace $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+ampersand move container to workspace $ws1
-bindsym $mod+Shift+eacute move container to workspace $ws2
-bindsym $mod+Shift+quotedbl move container to workspace $ws3
-bindsym $mod+Shift+apostrophe move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+minus move container to workspace $ws6
-bindsym $mod+Shift+egrave move container to workspace $ws7
-bindsym $mod+Shift+underscore move container to workspace $ws8
-bindsym $mod+Shift+ccedilla move container to workspace $ws9
-bindsym $mod+Shift+agrave move container to workspace $ws10
+#bindsym $mod+Shift+ampersand move container to workspace $ws1
+#bindsym $mod+Shift+eacute move container to workspace $ws2
+#bindsym $mod+Shift+quotedbl move container to workspace $ws3
+#bindsym $mod+Shift+apostrophe move container to workspace $ws4
+#bindsym $mod+Shift+5 move container to workspace $ws5
+#bindsym $mod+Shift+minus move container to workspace $ws6
+#bindsym $mod+Shift+egrave move container to workspace $ws7
+#bindsym $mod+Shift+underscore move container to workspace $ws8
+#bindsym $mod+Shift+ccedilla move container to workspace $ws9
+#bindsym $mod+Shift+agrave move container to workspace $ws10
+bindcode $mod+Shift+10 move container to workspace $ws1
+bindcode $mod+Shift+11 move container to workspace $ws2
+bindcode $mod+Shift+12 move container to workspace $ws3
+bindcode $mod+Shift+13 move container to workspace $ws4
+bindcode $mod+Shift+14 move container to workspace $ws5
+bindcode $mod+Shift+15 move container to workspace $ws6
+bindcode $mod+Shift+16 move container to workspace $ws7
+bindcode $mod+Shift+17 move container to workspace $ws8
+bindcode $mod+Shift+18 move container to workspace $ws9
+bindcode $mod+Shift+19 move container to workspace $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -149,7 +174,8 @@ mode "resize" {
         bindsym j resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
         bindsym l resize shrink height 10 px or 10 ppt
-        bindsym m resize grow width 10 px or 10 ppt
+        #bindsym m resize grow width 10 px or 10 ppt
+        bindcode 47 resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -215,6 +241,7 @@ exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Natu
 exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Accel Profile Enabled" 0 0 # Variable speed
 exec --no-startup-id i3_nagbar_battery 20
 exec --no-startup-id sudo systemctl start redshift.service
+exec --no-startup-id setxkbmap -layout "fr,us" -option "grp:alt_shift_toggle"
 
 bindsym $mod+n exec --no-startup-id firefox
 bindsym $mod+shift+n exec --no-startup-id firefox -private-window
