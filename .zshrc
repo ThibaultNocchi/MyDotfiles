@@ -21,8 +21,17 @@ fi
 source $HOME/.antigen.zsh
 antigen use oh-my-zsh
 antigen bundle mafredri/zsh-async
-antigen bundle sindresorhus/pure
+#antigen bundle sindresorhus/pure
 antigen apply
+
+if [[ ! -d "$HOME/.zsh/pure" ]]; then
+	mkdir -p "$HOME/.zsh"
+	git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
+fi
+fpath+=$HOME/.zsh/pure
+
+autoload -U promptinit; promptinit
+prompt pure
 
 (cat ~/.cache/wal/sequences &)
 

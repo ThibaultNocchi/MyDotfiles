@@ -1,0 +1,32 @@
+#!/bin/sh
+
+HOME=$(eval echo ~$SUDO_USER)
+
+# Install dependencies
+apt install i3 rxvt zsh python3-pip redshift thunar maim imagemagick 
+
+# Set ZSH
+chsh -s $(which zsh)
+
+# Link config files
+ln -f .Xdefaults .zshrc $HOME
+
+mkdir -p $HOME/.config/i3
+mkdir -p $HOME/.config/i3status
+mkdir -p $HOME/.config/picom
+mkdir -p $HOME/.config/VSCodium/User
+
+ln -f .config/i3/* $HOME/.config/i3/
+ln -f .config/i3status/* $HOME/.config/i3status/
+ln -f .config/picom/* $HOME/.config/picom/
+ln -f .config/VSCodium/User/* $HOME/.config/VSCodium/User/
+
+# Link scripts
+ln -f bin/* /usr/local/bin
+ln -f sbin/* /usr/local/sbin
+
+# Link /etc
+ln -f etc/sudoers.d/* /etc/sudoers.d/
+
+# Install pywal
+/usr/bin/python3 -m pip install pywal
