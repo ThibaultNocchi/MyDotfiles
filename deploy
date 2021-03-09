@@ -1,9 +1,10 @@
 #!/bin/sh
 
-HOME=$(eval echo ~$SUDO_USER)
+#HOME=$(eval echo ~$SUDO_USER)
 
 # Install dependencies
-apt install i3 rxvt zsh python3-pip redshift thunar maim imagemagick 
+sudo apt install i3 rxvt zsh python3-pip redshift thunar maim imagemagick ninja-build meson zathura feh
+sudo apt install libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl1-mesa-dev libpcre2-dev libpcre3-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev
 
 # Set ZSH
 chsh -s $(which zsh)
@@ -22,11 +23,22 @@ ln -f .config/picom/* $HOME/.config/picom/
 ln -f .config/VSCodium/User/* $HOME/.config/VSCodium/User/
 
 # Link scripts
-ln -f bin/* /usr/local/bin
-ln -f sbin/* /usr/local/sbin
+sudo ln -f bin/* /usr/local/bin
+sudo ln -f sbin/* /usr/local/sbin
 
 # Link /etc
-ln -f etc/sudoers.d/* /etc/sudoers.d/
+sudo cp etc/sudoers.d/* /etc/sudoers.d/
 
 # Install pywal
 /usr/bin/python3 -m pip install pywal
+
+# Install picom
+if [ ! -d "picom" ]; then
+    git clone https://github.com/yshui/picom.git
+    cd picom
+    git submodule update --init --recursive
+    meson --buildtype=release . build
+    ninja -C build
+    sudo ninja -C build install
+    cd ..
+fi
