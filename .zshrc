@@ -48,6 +48,8 @@ alias rs="rsync -azv --append --progress"
 alias python="python3"
 alias ncdu="ncdu" # I keep forgetting it
 alias ls="ls --color=auto --group-directories-first"
+alias vim="nvim"
+alias v="nvim"
 
 bindkey '^H' backward-kill-word
 bindkey '^[Od' backward-word
