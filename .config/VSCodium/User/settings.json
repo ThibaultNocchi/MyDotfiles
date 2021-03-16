@@ -55,4 +55,5 @@
     "latex-workshop.message.update.show": false,
     "java.configuration.checkProjectSettingsExclusions": false,
     "java.project.importOnFirstTimeStartup": "automatic",
+    "editor.insertSpaces": false,
 }
