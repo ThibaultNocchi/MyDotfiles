@@ -30,6 +30,13 @@ if [[ ! -d "$HOME/.zsh/pure" ]]; then
 fi
 fpath+=$HOME/.zsh/pure
 
+mkdir -p $HOME/.zsh/completions
+fpath+=$HOME/.zsh/completions
+
+if [[ ! -f "$HOME/.zsh/completions/_docker" ]]; then
+	curl https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker -o $HOME/.zsh/completions/_docker
+fi
+
 autoload -U promptinit; promptinit
 prompt pure
 
