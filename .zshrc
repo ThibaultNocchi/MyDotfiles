@@ -33,8 +33,12 @@ fpath+=$HOME/.zsh/pure
 mkdir -p $HOME/.zsh/completions
 fpath+=$HOME/.zsh/completions
 
+
 if [[ ! -f "$HOME/.zsh/completions/_docker" ]]; then
 	curl https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker -o $HOME/.zsh/completions/_docker
+fi
+if [[ ! -f "$HOME/.zsh/completions/_docker-compose" ]]; then
+	curl https://raw.githubusercontent.com/docker/compose/1.28.5/contrib/completion/zsh/_docker-compose -o $HOME/.zsh/completions/_docker-compose
 fi
 
 autoload -U promptinit; promptinit
