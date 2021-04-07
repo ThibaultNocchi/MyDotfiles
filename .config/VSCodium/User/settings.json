@@ -56,4 +56,10 @@
     "java.configuration.checkProjectSettingsExclusions": false,
     "java.project.importOnFirstTimeStartup": "automatic",
     "editor.insertSpaces": false,
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
 }

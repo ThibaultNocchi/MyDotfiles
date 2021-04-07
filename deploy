@@ -37,9 +37,6 @@ if [ ! -e "/usr/local/bin/i3lockmore.png" ]; then
 	sudo curl https://github.com/SammysHP/i3lockmore/raw/master/lock-icon.png -o /usr/local/bin/i3lockmore.png
 fi
 
-# Add spotify to i3status
-sudo git clone https://github.com/rpieja/i3spotifystatus.git /usr/local/bin/i3spotifystatus
-
 # Link /etc
 sudo cp etc/sudoers.d/* /etc/sudoers.d/
 

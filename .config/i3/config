@@ -217,7 +217,7 @@ set_from_resource $color15 i3wm.color15
 # finds out, if available)
 bar {
         #status_command i3status
-        status_command i3status | /usr/local/bin/i3spotifystatus/pystatus.py
+        status_command i3status | /usr/local/bin/playerctl_status.py
         position top
         colors {
                 background $background
