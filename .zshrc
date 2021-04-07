@@ -70,6 +70,3 @@ export EDITOR="vim"
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 source ~/.profile
-
-# opam configuration
-test -r /home/thibault/.opam/opam-init/init.zsh && . /home/thibault/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
