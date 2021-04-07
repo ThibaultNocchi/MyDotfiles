@@ -11,6 +11,9 @@ zstyle :compinstall filename '/home/thibault/.zshrc'
 
 autoload -Uz compinit
 compinit
+autoload -Uz bashcompinit
+bashcompinit
+
 # End of lines added by compinstall
 PATH=$PATH:/snap/bin:~/.local/bin
 
@@ -66,7 +69,7 @@ bindkey '^H' backward-kill-word
 bindkey '^[Od' backward-word
 bindkey '^[Oc' forward-word
 
-export EDITOR="vim"
+export EDITOR="nvim"
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 source ~/.profile
