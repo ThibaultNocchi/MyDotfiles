@@ -8,6 +8,7 @@ import json
 client_map = {
     "spotify": {"color": "#82c91e", "icon": ""},
     "firefox": {"color": "#fd7e14", "icon": ""},
+    "jellyfin": {"color": "#aa5cc3", "icon": ""},
     "default": {"color": "#15aabf", "icon": ""}
 }
 
@@ -34,14 +35,15 @@ def read_line():
 
 def is_playing():
     """ Uses playerctl to detect is something is playing """
-    status = subprocess.run(['playerctl', 'status'], stdout=subprocess.PIPE)
+    status = subprocess.run(
+        ['playerctl', '--player=%any,firefox', 'status'], stdout=subprocess.PIPE)
     status = status.stdout.decode('utf-8')
     return status == 'Playing\n'
 
 
 def get_playerctl_metadata():
     """ Retrieves playerctl metadata """
-    metadata = subprocess.run(['playerctl', 'metadata', '--format',
+    metadata = subprocess.run(['playerctl', '--player=%any,firefox', 'metadata', '--format',
                               '{{artist}} - {{title}}'], stdout=subprocess.PIPE)
     metadata = metadata.stdout.decode('utf-8').strip()
     return metadata
@@ -49,9 +51,15 @@ def get_playerctl_metadata():
 
 def get_player():
     """ Retrieves playerctl player """
-    player = subprocess.run(['playerctl', 'metadata', '--format',
+    player = subprocess.run(['playerctl', '--player=%any,firefox', 'metadata', '--format',
                              '{{playerName}}'], stdout=subprocess.PIPE)
     player = player.stdout.decode('utf-8').strip()
+    if player == 'mpv':
+        url = subprocess.run(
+            ['playerctl', '--player=%any,firefox', 'metadata', 'xesam:url'], stdout=subprocess.PIPE)
+        url = url.stdout.decode('utf-8').strip()
+        if "jellyfin" in url:
+            player = "jellyfin"
     if player not in client_map:
         return "default"
     return player
