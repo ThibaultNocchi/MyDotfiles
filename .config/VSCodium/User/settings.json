@@ -62,4 +62,7 @@
             "filenamePattern": "*.ipynb"
         }
     ],
+    "[arm-template]": {
+        "editor.defaultFormatter": "msazurermtools.azurerm-vscode-tools"
+    },
 }

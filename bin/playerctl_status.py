@@ -38,6 +38,8 @@ def is_playing():
     status = subprocess.run(
         ['playerctl', '--player=%any,firefox', 'status'], stdout=subprocess.PIPE)
     status = status.stdout.decode('utf-8')
+    if get_player() == 'jellyfin' and status == 'Stopped\n':
+        return True
     return status == 'Playing\n'
 
 
