@@ -49,12 +49,17 @@ prompt pure
 
 (cat ~/.cache/wal/sequences &)
 
+gitprune() {
+	git fetch -p && for branch in $(git branch -vv | grep ': gone]' | awk '{print $1}'); do git branch -D $branch; done
+}
+
 alias gch="git checkout"
 alias gpl="git pull --rebase"
 alias gph="git push"
 alias gap="git add ."
 alias gst="git status"
 alias gcm="git commit -m"
+alias gpr="gitprune"
 alias sdn="shutdown now"
 alias sudo="sudo "
 alias code="codium"
