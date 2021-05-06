@@ -54,7 +54,7 @@ gitprune() {
 }
 
 alias gch="git checkout"
-alias gpl="git pull --rebase"
+alias gpl="git pull --rebase && gpr"
 alias gph="git push"
 alias gap="git add ."
 alias gst="git status"
