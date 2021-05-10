@@ -69,6 +69,9 @@ alias ncdu="ncdu" # I keep forgetting it
 alias ls="ls --color=auto --group-directories-first"
 alias vim="nvim"
 alias v="nvim"
+alias tfi="terraform init"
+alias tfp="terraform plan"
+alias tfa="terraform apply"
 
 bindkey '^H' backward-kill-word
 bindkey '^[Od' backward-word
