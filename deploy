@@ -21,6 +21,7 @@ mkdir -p $HOME/.config/nvim
 ln -f .config/i3/* $HOME/.config/i3/
 ln -f .config/i3status/* $HOME/.config/i3status/
 ln -f .config/picom/* $HOME/.config/picom/
+ln -f .config/VSCodium/product.json $HOME/.config/VSCodium/product.json
 ln -f .config/VSCodium/User/* $HOME/.config/VSCodium/User/
 ln -f .config/nvim/* $HOME/.config/nvim/
 
