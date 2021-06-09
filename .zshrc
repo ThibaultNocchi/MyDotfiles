@@ -73,7 +73,7 @@ alias tfi="terraform init"
 alias tfp="terraform plan"
 alias tfa="terraform apply"
 
-bindkey '^H' backward-kill-word
+bindkey '^H' vi-backward-kill-word
 bindkey '^[Od' backward-word
 bindkey '^[Oc' forward-word
 
