@@ -1,21 +1,18 @@
-# Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-setopt autocd nomatch notify
+
+setopt autocd nomatch notify histreduceblanks
 unsetopt appendhistory beep
-bindkey -e
+
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/thibault/.zshrc'
 
-autoload -Uz compinit
-compinit
-autoload -Uz bashcompinit
-bashcompinit
+autoload -Uz compinit; compinit
+autoload -Uz bashcompinit; bashcompinit
 
-# End of lines added by compinstall
-PATH=$PATH:/snap/bin:~/.local/bin
+PATH=$PATH:/snap/bin
 
 if [[ ! -f "$HOME/.antigen.zsh" ]]; then
 	curl -L git.io/antigen > $HOME/.antigen.zsh
@@ -24,7 +21,10 @@ fi
 source $HOME/.antigen.zsh
 antigen use oh-my-zsh
 antigen bundle mafredri/zsh-async
-#antigen bundle sindresorhus/pure
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle docker
+antigen bundle docker-compose
 antigen apply
 
 if [[ ! -d "$HOME/.zsh/pure" ]]; then
@@ -33,18 +33,7 @@ if [[ ! -d "$HOME/.zsh/pure" ]]; then
 fi
 fpath+=$HOME/.zsh/pure
 
-mkdir -p $HOME/.zsh/completions
-fpath+=$HOME/.zsh/completions
-
-
-if [[ ! -f "$HOME/.zsh/completions/_docker" ]]; then
-	curl https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker -o $HOME/.zsh/completions/_docker
-fi
-if [[ ! -f "$HOME/.zsh/completions/_docker-compose" ]]; then
-	curl https://raw.githubusercontent.com/docker/compose/1.28.5/contrib/completion/zsh/_docker-compose -o $HOME/.zsh/completions/_docker-compose
-fi
-
-autoload -U promptinit; promptinit
+autoload -Uz promptinit; promptinit
 prompt pure
 
 (cat ~/.cache/wal/sequences &)
@@ -68,17 +57,14 @@ alias rs="rsync -azv --append --progress"
 alias python="python3"
 alias ncdu="ncdu" # I keep forgetting it
 alias ls="ls --color=auto --group-directories-first"
-alias vim="nvim"
 alias v="nvim"
-alias tfi="terraform init"
-alias tfp="terraform plan"
-alias tfa="terraform apply"
 
 bindkey '^H' vi-backward-kill-word
 bindkey '^[Od' backward-word
 bindkey '^[Oc' forward-word
 
 export EDITOR="nvim"
+export MANPAGER='nvim +Man!'
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 source ~/.profile
