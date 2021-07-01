@@ -36,7 +36,9 @@ fpath+=$HOME/.zsh/pure
 autoload -Uz promptinit; promptinit
 prompt pure
 
-(cat ~/.cache/wal/sequences &)
+if [[ -e ~/.cache/wal/sequences ]]; then
+	(cat ~/.cache/wal/sequences &)
+fi
 
 gitprune() {
 	git fetch -p && for branch in $(git branch -vv | grep ': gone]' | awk '{print $1}'); do git branch -D $branch; done
