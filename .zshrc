@@ -14,17 +14,16 @@ autoload -Uz bashcompinit; bashcompinit
 
 PATH=$PATH:/snap/bin
 
-if [[ ! -f "$HOME/.antigen.zsh" ]]; then
-	curl -L git.io/antigen > $HOME/.antigen.zsh
+if [[ ! -f "$HOME/antigen.zsh" ]]; then
+	curl -L git.io/antigen > $HOME/antigen.zsh
 fi
 
-source $HOME/.antigen.zsh
+source $HOME/antigen.zsh
 antigen use oh-my-zsh
 antigen bundle mafredri/zsh-async
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle docker
-antigen bundle docker-compose
+antigen bundle greymd/docker-zsh-completion
 antigen apply
 
 if [[ ! -d "$HOME/.zsh/pure" ]]; then
