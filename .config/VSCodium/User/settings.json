@@ -1,7 +1,6 @@
 {
     "window.menuBarVisibility": "toggle",
     "workbench.colorTheme": "Monokai",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "editor.fontFamily": "'SF Mono Powerline','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.fontSize": 13,
     "editor.dragAndDrop": false,
@@ -27,8 +26,7 @@
     "vetur.format.enable": false,
     "explorer.confirmDelete": false,
     "git.confirmSync": false,
-    "window.zoomLevel": 0,
-    "C_Cpp.clang_format_fallbackStyle": "LLVM",
+    "C_Cpp.clang_format_fallbackStyle": "{\"BasedOnStyle\":\"Chromium\",\"ColumnLimit\":\"0\"}",
     "polacode.backgroundColor": "white",
     "polacode.transparentBackground": true,
     "polacode.target": "snippet",
@@ -39,16 +37,11 @@
     "prolog.dialect": "ecl",
     "workbench.startupEditor": "newUntitledFile",
     "vetur.completion.tagCasing": "initial",
-    "python.dataScience.askForKernelRestart": false,
     "prettier.trailingComma": "none",
     "prettier.arrowParens": "avoid",
     "prolog.format.enabled": false,
     "prolog.linter.run": "never",
     "cSpell.language": "fr",
-    "python.defaultInterpreterPath": "python3",
-    "python.linting.pylintArgs": [
-        "--load-plugins=pylint_django"
-    ],
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -56,13 +49,30 @@
     "java.configuration.checkProjectSettingsExclusions": false,
     "java.project.importOnFirstTimeStartup": "automatic",
     "editor.insertSpaces": false,
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter.notebook.ipynb",
-            "filenamePattern": "*.ipynb"
-        }
-    ],
     "[arm-template]": {
         "editor.defaultFormatter": "msazurermtools.azurerm-vscode-tools"
     },
+    "[nginx]": {
+        "editor.defaultFormatter": "ahmadalli.vscode-nginx-conf"
+    },
+    "[dockerfile]": {
+        "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+    },
+    "redhat.telemetry.enabled": false,
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "jupyter.alwaysTrustNotebooks": true,
+    "terminal.integrated.tabs.enabled": true,
+    "files.associations": {
+        "*.tf": "terraform"
+    },
+    "diffEditor.ignoreTrimWhitespace": false,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "cSpell.enabled": false,
+    "[latex]": {
+        "editor.wordWrap": "on"
+    }
 }
