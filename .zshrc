@@ -9,8 +9,18 @@ unsetopt appendhistory beep
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/thibault/.zshrc'
 
-autoload -Uz compinit; compinit
-autoload -Uz bashcompinit; bashcompinit
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+
+if [[ ! -d "$HOME/.zsh/pure" ]]; then
+	mkdir -p "$HOME/.zsh"
+	git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
+fi
+
+fpath+=$HOME/.zsh/pure
+autoload -Uz promptinit && promptinit
+prompt pure
+
 
 PATH=$PATH:/snap/bin
 
@@ -25,15 +35,6 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle greymd/docker-zsh-completion
 antigen apply
-
-if [[ ! -d "$HOME/.zsh/pure" ]]; then
-	mkdir -p "$HOME/.zsh"
-	git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
-fi
-fpath+=$HOME/.zsh/pure
-
-autoload -Uz promptinit; promptinit
-prompt pure
 
 if [[ -e ~/.cache/wal/sequences ]]; then
 	(cat ~/.cache/wal/sequences &)
