@@ -1,3 +1,3 @@
 #!/bin/sh
 # feh --randomize --bg-fill ~/Pictures/Fonds\ d\'écrans\ 16.9/*
-/home/thibault/.local/bin/wal -i /home/thibault/Pictures/BG -e
+/home/thibault/.local/bin/wal -i /home/thibault/Pictures/BG -e --saturate 0.5
