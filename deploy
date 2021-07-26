@@ -2,8 +2,15 @@
 
 #HOME=$(eval echo ~$SUDO_USER)
 
-# Install dependencies
-sudo apt install i3 rxvt zsh python3-pip redshift thunar maim imagemagick ninja-build meson zathura feh neovim curl fonts-font-awesome
+# Install graphical dependencies
+if [ "$1" != "--nogui" ]; then
+    sudo apt install i3 rxvt redshift thunar maim imagemagick zathura feh fonts-font-awesome
+else
+    echo "Skipping GUI tools installation"
+fi
+
+# Install console dependencies
+sudo apt install zsh python3-pip ninja-build meson neovim curl
 sudo apt install libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl1-mesa-dev libpcre2-dev libpcre3-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev
 
 # Set ZSH
@@ -31,37 +38,45 @@ ln -f .config/sheldon/* $HOME/.config/sheldon/
 sudo ln -f bin/* /usr/local/bin
 sudo ln -f sbin/* /usr/local/sbin
 
-# Add i3lockmore
-if [ ! -e "/usr/local/bin/i3lockmore" ]; then
-    sudo curl https://raw.githubusercontent.com/SammysHP/i3lockmore/master/i3lockmore -o /usr/local/bin/i3lockmore
-    sudo chmod +x /usr/local/bin/i3lockmore
-fi
-if [ ! -e "/usr/local/bin/i3lockmore.png" ]; then
-    sudo curl https://github.com/SammysHP/i3lockmore/raw/master/lock-icon.png -o /usr/local/bin/i3lockmore.png
-fi
-
 # Link /etc
 sudo cp etc/sudoers.d/* /etc/sudoers.d/
 
-# Install pywal
-/usr/bin/python3 -m pip install pywal
+# Install graphical custom tools
 
-# Install picom
-if [ ! -d "picom" ]; then
-    git clone https://github.com/yshui/picom.git
-    cd picom
-    git submodule update --init --recursive
-    meson --buildtype=release . build
-    ninja -C build
-    sudo ninja -C build install
-    cd ..
-fi
+if [ "$1" != "--nogui" ]; then
 
-# Install playerctl
-PLAYERCTL_VERSION=$(playerctl --version)
-PLAYERCTL_LATEST=$(curl -s https://api.github.com/repos/altdesktop/playerctl/releases/latest | grep -Po '"tag_name": "\K.*?(?=")')
-if [ ! "$PLAYERCTL_VERSION" = "$PLAYERCTL_LATEST" ]; then
-    curl -s https://api.github.com/repos/altdesktop/playerctl/releases/latest | grep "browser_download_url.*deb" | sed -E 's/^.*(http.*)".*$/\1/' | xargs wget -O playerctl.deb
-    sudo dpkg -i playerctl.deb
-    rm playerctl.deb
+    # Add i3lockmore
+    if [ ! -e "/usr/local/bin/i3lockmore" ]; then
+        sudo curl https://raw.githubusercontent.com/SammysHP/i3lockmore/master/i3lockmore -o /usr/local/bin/i3lockmore
+        sudo chmod +x /usr/local/bin/i3lockmore
+    fi
+    if [ ! -e "/usr/local/bin/i3lockmore.png" ]; then
+        sudo curl https://github.com/SammysHP/i3lockmore/raw/master/lock-icon.png -o /usr/local/bin/i3lockmore.png
+    fi
+
+    # Install pywal
+    /usr/bin/python3 -m pip install pywal
+
+    # Install picom
+    if [ ! -d "picom" ]; then
+        git clone https://github.com/yshui/picom.git
+        cd picom
+        git submodule update --init --recursive
+        meson --buildtype=release . build
+        ninja -C build
+        sudo ninja -C build install
+        cd ..
+    fi
+
+    # Install playerctl
+    PLAYERCTL_VERSION=$(playerctl --version)
+    PLAYERCTL_LATEST=$(curl -s https://api.github.com/repos/altdesktop/playerctl/releases/latest | grep -Po '"tag_name": "\K.*?(?=")')
+    if [ ! "$PLAYERCTL_VERSION" = "$PLAYERCTL_LATEST" ]; then
+        curl -s https://api.github.com/repos/altdesktop/playerctl/releases/latest | grep "browser_download_url.*deb" | sed -E 's/^.*(http.*)".*$/\1/' | xargs wget -O playerctl.deb
+        sudo dpkg -i playerctl.deb
+        rm playerctl.deb
+    fi
+
+else
+    echo "Skipping GUI custom tools installation"
 fi
