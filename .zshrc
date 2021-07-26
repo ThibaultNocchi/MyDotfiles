@@ -15,6 +15,9 @@ export EDITOR="nvim"
 export MANPAGER='nvim +Man!'
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
+# OMZ PLUGINS
+plugins=(docker docker-compose kubectl node npm pip rust rustup)
+
 # PLUGIN MANAGER
 if [[ ! -f "$HOME/.local/bin/sheldon" ]]; then
 	curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh |
