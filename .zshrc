@@ -9,41 +9,29 @@ unsetopt appendhistory beep
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/thibault/.zshrc'
 
-autoload -U +X compinit && compinit
-autoload -U +X bashcompinit && bashcompinit
+# ENV MODIFICATION
+PATH=$PATH:/snap/bin:$HOME/bin:$HOME/.local/bin
+export EDITOR="nvim"
+export MANPAGER='nvim +Man!'
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
-if [[ ! -d "$HOME/.zsh/pure" ]]; then
-	mkdir -p "$HOME/.zsh"
-	git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
+# PLUGIN MANAGER
+if [[ ! -f "$HOME/.local/bin/sheldon" ]]; then
+	curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh |
+		bash -s -- --repo rossmacarthur/sheldon --to ~/.local/bin
 fi
+export ZSH="$HOME/.config/sheldon/repos/github.com/ohmyzsh/ohmyzsh"
+eval "$(sheldon --config-dir ~/.config/sheldon --data-dir ~/.config/sheldon source)"
 
-fpath+=$HOME/.zsh/pure
-autoload -Uz promptinit && promptinit
-prompt pure
-
-
-PATH=$PATH:/snap/bin
-
-if [[ ! -f "$HOME/antigen.zsh" ]]; then
-	curl -L git.io/antigen > $HOME/antigen.zsh
-fi
-
-source $HOME/antigen.zsh
-antigen use oh-my-zsh
-antigen bundle mafredri/zsh-async
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle greymd/docker-zsh-completion
-antigen apply
-
+# PYWAL THEME
 if [[ -e ~/.cache/wal/sequences ]]; then
 	(cat ~/.cache/wal/sequences &)
 fi
 
+# ALIASES
 gitprune() {
 	git fetch -p && for branch in $(git branch -vv | grep ': gone]' | awk '{print $1}'); do git branch -D $branch; done
 }
-
 alias gch="git checkout"
 alias gpl="git pull --rebase && gpr"
 alias gph="git push"
@@ -59,14 +47,10 @@ alias rs="rsync -azv --append --progress"
 alias python="python3"
 alias ncdu="ncdu" # I keep forgetting it
 alias ls="ls --color=auto --group-directories-first"
+alias ll="ls -alF"
 alias v="nvim"
 
+# BINDKEYS
 bindkey '^H' vi-backward-kill-word
 bindkey '^[Od' backward-word
 bindkey '^[Oc' forward-word
-
-export EDITOR="nvim"
-export MANPAGER='nvim +Man!'
-export DOTNET_CLI_TELEMETRY_OPTOUT=1
-
-source ~/.profile

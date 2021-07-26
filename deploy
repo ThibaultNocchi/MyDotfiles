@@ -17,6 +17,7 @@ mkdir -p $HOME/.config/i3status
 mkdir -p $HOME/.config/picom
 mkdir -p $HOME/.config/VSCodium/User
 mkdir -p $HOME/.config/nvim
+mkdir -p $HOME/.config/sheldon
 
 ln -f .config/i3/* $HOME/.config/i3/
 ln -f .config/i3status/* $HOME/.config/i3status/
@@ -24,6 +25,7 @@ ln -f .config/picom/* $HOME/.config/picom/
 ln -f .config/VSCodium/product.json $HOME/.config/VSCodium/product.json
 ln -f .config/VSCodium/User/* $HOME/.config/VSCodium/User/
 ln -f .config/nvim/* $HOME/.config/nvim/
+ln -f .config/sheldon/* $HOME/.config/sheldon/
 
 # Link scripts
 sudo ln -f bin/* /usr/local/bin
@@ -31,11 +33,11 @@ sudo ln -f sbin/* /usr/local/sbin
 
 # Add i3lockmore
 if [ ! -e "/usr/local/bin/i3lockmore" ]; then
-	sudo curl https://raw.githubusercontent.com/SammysHP/i3lockmore/master/i3lockmore -o /usr/local/bin/i3lockmore
-	sudo chmod +x /usr/local/bin/i3lockmore
+    sudo curl https://raw.githubusercontent.com/SammysHP/i3lockmore/master/i3lockmore -o /usr/local/bin/i3lockmore
+    sudo chmod +x /usr/local/bin/i3lockmore
 fi
 if [ ! -e "/usr/local/bin/i3lockmore.png" ]; then
-	sudo curl https://github.com/SammysHP/i3lockmore/raw/master/lock-icon.png -o /usr/local/bin/i3lockmore.png
+    sudo curl https://github.com/SammysHP/i3lockmore/raw/master/lock-icon.png -o /usr/local/bin/i3lockmore.png
 fi
 
 # Link /etc
@@ -59,7 +61,7 @@ fi
 PLAYERCTL_VERSION=$(playerctl --version)
 PLAYERCTL_LATEST=$(curl -s https://api.github.com/repos/altdesktop/playerctl/releases/latest | grep -Po '"tag_name": "\K.*?(?=")')
 if [ ! "$PLAYERCTL_VERSION" = "$PLAYERCTL_LATEST" ]; then
-	curl -s https://api.github.com/repos/altdesktop/playerctl/releases/latest | grep "browser_download_url.*deb" | sed -E 's/^.*(http.*)".*$/\1/' | xargs wget -O playerctl.deb
-	sudo dpkg -i playerctl.deb
-	rm playerctl.deb
+    curl -s https://api.github.com/repos/altdesktop/playerctl/releases/latest | grep "browser_download_url.*deb" | sed -E 's/^.*(http.*)".*$/\1/' | xargs wget -O playerctl.deb
+    sudo dpkg -i playerctl.deb
+    rm playerctl.deb
 fi
