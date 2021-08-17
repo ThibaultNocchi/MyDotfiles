@@ -36,6 +36,11 @@ fi
 gitprune() {
 	git fetch -p && for branch in $(git branch -vv | grep ': gone]' | awk '{print $1}'); do git branch -D $branch; done
 }
+
+dockercd() {
+	cd $(docker volume inspect $1 | grep Mountpoint | sed -r 's/^\s*"Mountpoint": "(.+)".*$/\1/')
+}
+
 alias gch="git checkout"
 alias gpl="git pull --rebase && gpr"
 alias gph="git push"
