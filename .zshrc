@@ -10,7 +10,8 @@ unsetopt appendhistory beep
 zstyle :compinstall filename '/home/thibault/.zshrc'
 
 # ENV MODIFICATION
-PATH=$PATH:/snap/bin:$HOME/bin:$HOME/.local/bin
+PATH=$PATH:/snap/bin:$HOME/bin:$HOME/.local/bin:/usr/local/go/bin
+PATH=$PATH:$(go env GOPATH)/bin
 export EDITOR="nvim"
 export MANPAGER='nvim +Man!'
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
@@ -52,6 +53,7 @@ alias ncdu="ncdu" # I keep forgetting it
 alias ls="ls --color=auto --group-directories-first"
 alias ll="ls -alF"
 alias v="nvim"
+alias nvidia="__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia"
 
 # BINDKEYS
 bindkey '^H' vi-backward-kill-word
