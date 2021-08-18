@@ -11,7 +11,10 @@ zstyle :compinstall filename '/home/thibault/.zshrc'
 
 # ENV MODIFICATION
 PATH=$PATH:/snap/bin:$HOME/bin:$HOME/.local/bin:/usr/local/go/bin
-PATH=$PATH:$(go env GOPATH)/bin
+if command -v COMMAND &> /dev/null
+then
+	PATH=$PATH:$(go env GOPATH)/bin
+fi
 export EDITOR="nvim"
 export MANPAGER='nvim +Man!'
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
