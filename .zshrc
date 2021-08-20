@@ -11,7 +11,7 @@ zstyle :compinstall filename '/home/thibault/.zshrc'
 
 # ENV MODIFICATION
 PATH=$PATH:/snap/bin:$HOME/bin:$HOME/.local/bin:/usr/local/go/bin
-if command -v COMMAND &> /dev/null
+if command -v go &> /dev/null
 then
 	PATH=$PATH:$(go env GOPATH)/bin
 fi
