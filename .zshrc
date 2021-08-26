@@ -44,6 +44,10 @@ dockercd() {
 	cd $(docker volume inspect $1 | grep Mountpoint | sed -r 's/^\s*"Mountpoint": "(.+)".*$/\1/')
 }
 
+svg2png() {
+	inkscape --export-type="png" $1
+}
+
 alias gch="git checkout"
 alias gpl="git pull --rebase && gpr"
 alias gph="git push"
