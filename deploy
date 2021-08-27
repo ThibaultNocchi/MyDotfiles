@@ -25,6 +25,7 @@ mkdir -p $HOME/.config/picom
 mkdir -p $HOME/.config/VSCodium/User
 mkdir -p $HOME/.config/nvim
 mkdir -p $HOME/.config/sheldon
+mkdir -p $HOME/.config/pipewire/media-session.d
 
 ln -f .config/i3/* $HOME/.config/i3/
 ln -f .config/i3status/* $HOME/.config/i3status/
@@ -33,6 +34,7 @@ ln -f .config/VSCodium/product.json $HOME/.config/VSCodium/product.json
 ln -f .config/VSCodium/User/* $HOME/.config/VSCodium/User/
 ln -f .config/nvim/* $HOME/.config/nvim/
 ln -f .config/sheldon/* $HOME/.config/sheldon/
+ln -f .config/pipewire/media-session.d/* $HOME/.config/pipewire/media-session.d
 
 # Link scripts
 sudo ln -f bin/* /usr/local/bin
