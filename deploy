@@ -2,22 +2,37 @@
 
 #HOME=$(eval echo ~$SUDO_USER)
 
+# Check for paru
+if ! command -v paru &> /dev/null; then
+    echo "Installing paru"
+    sudo pacman -Sy --needed base-devel
+    git clone https://aur.archlinux.org/paru.git
+    cd paru
+    makepkg -si --noconfirm
+    cd ..
+fi
+
 # Install graphical dependencies
 if [ "$1" != "--nogui" ]; then
-    sudo apt install i3 rxvt redshift thunar maim imagemagick zathura feh fonts-font-awesome
+    paru -Sy --noconfirm --needed rxvt-unicode redshift thunar maim zathura feh ttf-font-awesome i3lockmore-git python-pywal picom-git playerctl otf-sfmono-patched rofi vscodium-bin xorg-xinput noto-fonts-emoji pavucontrol blueman pango dunst ttf-dejavu backlight_control upower autorandr
 else
     echo "Skipping GUI tools installation"
 fi
 
 # Install console dependencies
-sudo apt install zsh python3-pip ninja-build meson neovim curl xcwd
-sudo apt install libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl1-mesa-dev libpcre2-dev libpcre3-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev
+paru -Sy --noconfirm --needed git zsh python-pip neovim curl xcwd-git bat man-pages man-db cronie
+
+# Set git settings
+git config --global user.name "Thibault Nocchi"
+git config --global user.email "1619359+ThibaultNocchi@users.noreply.github.com"
 
 # Set ZSH
-chsh -s $(which zsh)
+if [ "$SHELL" != "/usr/bin/zsh" ]; then
+    chsh -s $(which zsh)
+fi
 
 # Link config files
-ln -f .Xdefaults .zshrc $HOME
+ln -f .xinitrc .Xresources .zprofile .zshrc $HOME
 
 mkdir -p $HOME/.config/i3
 mkdir -p $HOME/.config/i3status
@@ -26,6 +41,7 @@ mkdir -p $HOME/.config/VSCodium/User
 mkdir -p $HOME/.config/nvim
 mkdir -p $HOME/.config/sheldon
 mkdir -p $HOME/.config/pipewire/media-session.d
+mkdir -p $HOME/.config/redshift
 
 ln -f .config/i3/* $HOME/.config/i3/
 ln -f .config/i3status/* $HOME/.config/i3status/
@@ -35,50 +51,10 @@ ln -f .config/VSCodium/User/* $HOME/.config/VSCodium/User/
 ln -f .config/nvim/* $HOME/.config/nvim/
 ln -f .config/sheldon/* $HOME/.config/sheldon/
 ln -f .config/pipewire/media-session.d/* $HOME/.config/pipewire/media-session.d
+ln -f .config/redshift/* $HOME/.config/redshift/
 
 # Link scripts
 sudo ln -f bin/* /usr/local/bin
-sudo ln -f sbin/* /usr/local/sbin
 
-# Link /etc
-sudo cp etc/sudoers.d/* /etc/sudoers.d/
-
-# Install graphical custom tools
-
-if [ "$1" != "--nogui" ]; then
-
-    # Add i3lockmore
-    if [ ! -e "/usr/local/bin/i3lockmore" ]; then
-        sudo curl https://raw.githubusercontent.com/SammysHP/i3lockmore/master/i3lockmore -o /usr/local/bin/i3lockmore
-        sudo chmod +x /usr/local/bin/i3lockmore
-    fi
-    if [ ! -e "/usr/local/bin/i3lockmore.png" ]; then
-        sudo curl https://github.com/SammysHP/i3lockmore/raw/master/lock-icon.png -o /usr/local/bin/i3lockmore.png
-    fi
-
-    # Install pywal
-    /usr/bin/python3 -m pip install pywal
-
-    # Install picom
-    if [ ! -d "picom" ]; then
-        git clone https://github.com/yshui/picom.git
-        cd picom
-        git submodule update --init --recursive
-        meson --buildtype=release . build
-        ninja -C build
-        sudo ninja -C build install
-        cd ..
-    fi
-
-    # Install playerctl
-    PLAYERCTL_VERSION=$(playerctl --version)
-    PLAYERCTL_LATEST=$(curl -s https://api.github.com/repos/altdesktop/playerctl/releases/latest | grep -Po '"tag_name": "\K.*?(?=")')
-    if [ ! "$PLAYERCTL_VERSION" = "$PLAYERCTL_LATEST" ]; then
-        curl -s https://api.github.com/repos/altdesktop/playerctl/releases/latest | grep "browser_download_url.*deb" | sed -E 's/^.*(http.*)".*$/\1/' | xargs wget -O playerctl.deb
-        sudo dpkg -i playerctl.deb
-        rm playerctl.deb
-    fi
-
-else
-    echo "Skipping GUI custom tools installation"
-fi
+# Enable redshift
+systemctl --user --now enable redshift.service

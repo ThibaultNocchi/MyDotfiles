@@ -14,9 +14,6 @@ shell = "zsh"
 
 [plugins]
 
-[plugins.zsh-defer]
-github = "romkatv/zsh-defer"
-
 [plugins.zsh-syntax-highlighting]
 github = "zsh-users/zsh-syntax-highlighting"
 
@@ -36,5 +33,3 @@ apply = ["fpath"]
 
 [plugins.oh-my-zsh]
 github = "ohmyzsh/ohmyzsh"
-
-

@@ -1,3 +1,5 @@
+Xcursor.size: 28
+
 !URxvt*font: xft:UbuntuMono:size=12
 URxvt*font: xft:SFMonoPowerline:size=11
 URxvt*letterSpace: 1
@@ -48,4 +50,3 @@ URxvt.matcher.button: 1
 ! white
 *.color7:       #a8a19f
 *.color15:      #f1efee
-

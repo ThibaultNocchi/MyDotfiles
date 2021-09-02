@@ -1,2 +1,0 @@
-thibault ALL=(ALL) NOPASSWD:/usr/bin/systemctl start redshift.service
-thibault ALL=(ALL) NOPASSWD:/usr/bin/systemctl stop redshift.service 

@@ -9,8 +9,8 @@ if [ -n $1 ] && [ "$1" = '-query' ]; then
 fi
 
 if [ "$CURRENT" = "fr" ]; then
-    setxkbmap -layout us
-    echo "Switched to: \"us\""
+    setxkbmap -layout us intl
+    echo "Switched to: \"us intl\""
 elif [ "$CURRENT" = "us" ]; then
     setxkbmap -layout fr
     echo "Switched to: \"fr\""

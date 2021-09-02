@@ -192,7 +192,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-exec --no-startup-id xrdb ~/.cache/wal/colors.Xresources
+exec --no-startup-id xrdb -merge ~/.cache/wal/colors.Xresources
 set_from_resource $background i3wm.background #272822
 set_from_resource $foreground i3wm.foreground #FFFFFF
 set_from_resource $cursor i3wm.cursor
@@ -234,6 +234,7 @@ workspace_auto_back_and_forth yes
 default_border none
 popup_during_fullscreen smart
 
+exec --no-startup-id autorandr -c
 exec --no-startup-id picom --experimental-backends -b
 exec --no-startup-id /usr/local/bin/change_bg
 exec --no-startup-id playerctld daemon
@@ -252,7 +253,6 @@ exec --no-startup-id xinput set-prop "SYNA2393:00 06CB:7A13 Touchpad" "libinput 
 
 
 exec --no-startup-id i3_nagbar_battery 20
-exec --no-startup-id sudo systemctl start redshift.service
 exec --no-startup-id setxkbmap -layout "fr,us" -option "grp:alt_shift_toggle"
 
 bindsym $mod+n exec --no-startup-id firefox
@@ -269,8 +269,8 @@ bindsym XF86AudioPrev exec "playerctl --player=%any,firefox previous"
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86MonBrightnessUp exec --no-startup-id sudo change_brightness 5
-bindsym XF86MonBrightnessDown exec --no-startup-id sudo change_brightness -5
+bindsym XF86MonBrightnessUp exec --no-startup-id /usr/bin/backlight_control +10
+bindsym XF86MonBrightnessDown exec --no-startup-id /usr/bin/backlight_control -10
 bindsym --release Print exec --no-startup-id maim -s /home/thibault/Pictures/print_screen_$(date +%F-%H-%M-%S).png
 bindsym $mod+Shift+s exec "i3-nagbar -t warning -m 'You pressed the shutdown shortcut. Do you really want to shutdown?' -B 'Yes, shutdown now' 'shutdown now'"
 bindsym $mod+F1 exec --no-startup-id /usr/local/bin/hdmi_enable
