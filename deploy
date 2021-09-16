@@ -52,6 +52,7 @@ ln -f .config/nvim/* $HOME/.config/nvim/
 ln -f .config/sheldon/* $HOME/.config/sheldon/
 ln -f .config/pipewire/media-session.d/* $HOME/.config/pipewire/media-session.d
 ln -f .config/redshift/* $HOME/.config/redshift/
+sudo ln -f etc/modprobe.d/hid_apple.conf /etc/modprobe.d/hid_apple.conf
 
 # Link scripts
 sudo ln -f bin/* /usr/local/bin
