@@ -43,6 +43,7 @@ mkdir -p $HOME/.config/nvim
 mkdir -p $HOME/.config/sheldon
 mkdir -p $HOME/.config/pipewire/media-session.d
 mkdir -p $HOME/.config/redshift
+mkdir -p $HOME/.config/paru
 
 ln -f .config/i3/* $HOME/.config/i3/
 ln -f .config/i3status/* $HOME/.config/i3status/
@@ -53,6 +54,8 @@ ln -f .config/nvim/* $HOME/.config/nvim/
 ln -f .config/sheldon/* $HOME/.config/sheldon/
 ln -f .config/pipewire/media-session.d/* $HOME/.config/pipewire/media-session.d
 ln -f .config/redshift/* $HOME/.config/redshift/
+ln -f .config/paru/* $HOME/.config/paru/
+
 sudo ln -f etc/modprobe.d/hid_apple.conf /etc/modprobe.d/hid_apple.conf
 
 # Link scripts
