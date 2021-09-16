@@ -10,6 +10,7 @@ if ! command -v paru &> /dev/null; then
     cd paru
     makepkg -si --noconfirm
     cd ..
+    rm -rf paru
 fi
 
 # Install graphical dependencies
