@@ -65,7 +65,8 @@ alias ncdu="ncdu" # I keep forgetting it
 alias ls="ls --color=auto --group-directories-first"
 alias ll="ls -alhF"
 alias v="nvim"
-alias nvidia="__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia"
+alias nvidia="DRI_PRIME=1"
+alias cat="bat -p"
 
 # BINDKEYS
 bindkey '^H' vi-backward-kill-word
