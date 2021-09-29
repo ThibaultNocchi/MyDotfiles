@@ -69,10 +69,18 @@
     },
     "diffEditor.ignoreTrimWhitespace": false,
     "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     "cSpell.enabled": false,
     "[latex]": {
         "editor.wordWrap": "on"
+    },
+    "volar.codeLens.pugTools": false,
+    "volar.formatting.printWidth": 120,
+    "volar.icon.finder": true,
+    "volar.icon.preview": true,
+    "editor.largeFileOptimizations": false,
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     }
 }
