@@ -15,13 +15,13 @@ fi
 
 # Install graphical dependencies
 if [ "$1" != "--nogui" ]; then
-    paru -Sy --noconfirm --needed rxvt-unicode redshift thunar maim zathura feh ttf-font-awesome i3lockmore-git python-pywal picom-git playerctl otf-sfmono-patched rofi vscodium-bin xorg-xinput noto-fonts-emoji pavucontrol blueman pango dunst ttf-dejavu backlight_control upower autorandr
+    paru -Sy --noconfirm --needed rxvt-unicode redshift thunar maim zathura zathura-pdf-mupdf feh ttf-font-awesome i3lockmore-git python-pywal picom-git playerctl otf-sfmono-patched rofi vscodium-bin xorg-xinput noto-fonts-emoji pavucontrol blueman pango dunst ttf-dejavu backlight_control upower autorandr
 else
     echo "Skipping GUI tools installation"
 fi
 
 # Install console dependencies
-paru -Sy --noconfirm --needed git zsh python-pip neovim curl xcwd-git bat man-pages man-db cronie
+paru -Sy --noconfirm --needed git zsh python-pip neovim curl xcwd-git bat man-pages man-db cronie rsync
 
 # Set git settings
 git config --global user.name "Thibault Nocchi"
