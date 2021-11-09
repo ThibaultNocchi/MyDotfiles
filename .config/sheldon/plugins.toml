@@ -12,13 +12,13 @@
 
 shell = "zsh"
 
+[templates]
+completion = { value = 'mkdir -p "$ZSH/completions"; ln -f -s "{{ file }}" "$ZSH/completions/_{{ name }}"', each = true }
+
 [plugins]
 
 [plugins.zsh-syntax-highlighting]
 github = "zsh-users/zsh-syntax-highlighting"
-
-[plugins.zsh-async]
-github = "mafredri/zsh-async"
 
 [plugins.pure]
 github = "sindresorhus/pure"
@@ -30,6 +30,11 @@ github = "zsh-users/zsh-autosuggestions"
 [plugins.paru-completion]
 remote = 'https://raw.githubusercontent.com/Morganamilo/paru/master/completions/zsh'
 apply = ["fpath"]
+
+[plugins.pass]
+remote = 'https://git.zx2c4.com/password-store/plain/src/completion/pass.zsh-completion'
+apply = ["completion"]
+
 
 [plugins.oh-my-zsh]
 github = "ohmyzsh/ohmyzsh"
