@@ -51,7 +51,7 @@ svg2png() {
 alias gch="git checkout"
 alias gpl="git pull --rebase && gpr"
 alias gph="git push"
-alias gap="git add ."
+alias gap="git add -A"
 alias gst="git status"
 alias gcm="git commit -m"
 alias glo="git log --all --decorate --oneline --graph"
