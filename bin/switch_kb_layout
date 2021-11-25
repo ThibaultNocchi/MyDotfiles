@@ -14,4 +14,6 @@ if [ "$CURRENT" = "fr" ]; then
 elif [ "$CURRENT" = "us" ]; then
     setxkbmap -layout fr
     echo "Switched to: \"fr\""
+else
+		setxkbmap -layout us intl
 fi
