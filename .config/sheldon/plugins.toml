@@ -35,6 +35,14 @@ apply = ["fpath"]
 remote = 'https://git.zx2c4.com/password-store/plain/src/completion/pass.zsh-completion'
 apply = ["completion"]
 
+# ZSH completions before OMZ
 
 [plugins.oh-my-zsh]
 github = "ohmyzsh/ohmyzsh"
+
+# Bash completions after OMZ
+
+[plugins.azcli]
+remote = 'https://raw.githubusercontent.com/Azure/azure-cli/dev/az.completion'
+apply = ["source"]
+

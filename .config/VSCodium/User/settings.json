@@ -65,7 +65,8 @@
   "jupyter.alwaysTrustNotebooks": true,
   "terminal.integrated.tabs.enabled": true,
   "files.associations": {
-    "*.tf": "terraform"
+    "*.tf": "terraform",
+    "*.hcl": "terragrunt"
   },
   "diffEditor.ignoreTrimWhitespace": false,
   "[javascript]": {
