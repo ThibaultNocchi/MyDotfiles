@@ -96,5 +96,10 @@
     "key": "ctrl+shift+i",
     "command": "-notebook.format",
     "when": "notebookEditable && !editorTextFocus && activeEditor == 'workbench.editor.notebook'"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "-dendron.gotoNote",
+    "when": "editorFocus"
   }
 ]
