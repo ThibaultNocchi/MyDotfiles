@@ -1,2 +1,2 @@
 #!/bin/sh
-wal -i /home/thibault/Pictures/BG -e --saturate 0.5
+wal -i /home/thibault/Pictures/BG -e --saturate 0.4
