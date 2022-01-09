@@ -20,7 +20,7 @@ export MANPAGER='nvim +Man!'
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 # OMZ PLUGINS
-plugins=(docker docker-compose kubectl node npm pip rust rustup)
+plugins=(docker docker-compose kubectl node npm pip rust)
 
 # PLUGIN MANAGER
 if [[ ! -f "$HOME/.local/bin/sheldon" ]]; then
@@ -56,6 +56,7 @@ alias gst="git status"
 alias gcm="git commit -m"
 alias glo="git log --all --decorate --oneline --graph"
 alias gpr="gitprune"
+alias gcl="git clean -fxd"
 alias sdn="shutdown now"
 alias sudo="sudo "
 alias code="codium"
@@ -72,3 +73,6 @@ alias cat="bat -p"
 bindkey '^H' vi-backward-kill-word
 bindkey '^[Od' backward-word
 bindkey '^[Oc' forward-word
+
+# Source not commited file
+source ~/.zshrc.env
