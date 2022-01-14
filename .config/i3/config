@@ -238,6 +238,7 @@ exec --no-startup-id autorandr -c
 exec --no-startup-id picom --experimental-backends -b
 exec --no-startup-id /usr/local/bin/change_bg
 exec --no-startup-id playerctld daemon
+exec --no-startup-id nm-applet
 
 # MSI
 exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Accel Speed" 0.55 # Accel speed
@@ -253,7 +254,6 @@ exec --no-startup-id xinput set-prop "SYNA2393:00 06CB:7A13 Touchpad" "libinput 
 
 
 exec --no-startup-id i3_nagbar_battery 20
-exec --no-startup-id setxkbmap -layout "fr,us" -option "grp:alt_shift_toggle"
 
 bindsym $mod+n exec --no-startup-id firefox
 bindsym $mod+shift+n exec --no-startup-id firefox -private-window

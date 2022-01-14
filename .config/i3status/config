@@ -52,6 +52,7 @@ cpu_usage {
 
 cpu_temperature 0 {
 	format = "🔥 %degrees°C"
+	path = "/sys/class/thermal/thermal_zone12/temp"
 }
 
 disk "/" {
