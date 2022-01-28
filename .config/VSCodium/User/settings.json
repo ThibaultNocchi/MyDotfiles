@@ -84,5 +84,8 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "azureFunctions.showProjectWarning": false
+  "azureFunctions.showProjectWarning": false,
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
 }

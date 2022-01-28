@@ -31,9 +31,9 @@ github = "zsh-users/zsh-autosuggestions"
 remote = 'https://raw.githubusercontent.com/Morganamilo/paru/master/completions/zsh'
 apply = ["fpath"]
 
-[plugins.pass]
-remote = 'https://git.zx2c4.com/password-store/plain/src/completion/pass.zsh-completion'
-apply = ["completion"]
+[plugins.gopass]
+remote = 'https://raw.githubusercontent.com/gopasspw/gopass/master/zsh.completion'
+apply = ["fpath"]
 
 # ZSH completions before OMZ
 
@@ -45,4 +45,3 @@ github = "ohmyzsh/ohmyzsh"
 [plugins.azcli]
 remote = 'https://raw.githubusercontent.com/Azure/azure-cli/dev/az.completion'
 apply = ["source"]
-
