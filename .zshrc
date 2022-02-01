@@ -13,7 +13,7 @@ zstyle :compinstall filename '/home/thibault/.zshrc'
 PATH=$PATH:/snap/bin:$HOME/bin:$HOME/.local/bin:/usr/local/go/bin
 if command -v go &> /dev/null
 then
-	PATH=$PATH:$(go env GOPATH)/bin
+    PATH=$PATH:$(go env GOPATH)/bin
 fi
 export EDITOR="nvim"
 export MANPAGER='nvim +Man!'
@@ -24,28 +24,28 @@ plugins=(docker docker-compose kubectl node npm pip rust)
 
 # PLUGIN MANAGER
 if [[ ! -f "$HOME/.local/bin/sheldon" ]]; then
-	curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh |
-		bash -s -- --repo rossmacarthur/sheldon --to ~/.local/bin
+    curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh |
+    bash -s -- --repo rossmacarthur/sheldon --to ~/.local/bin
 fi
 export ZSH="$HOME/.config/sheldon/repos/github.com/ohmyzsh/ohmyzsh"
 eval "$(sheldon --config-dir ~/.config/sheldon --data-dir ~/.config/sheldon source)"
 
 # PYWAL THEME
 if [[ -e ~/.cache/wal/sequences ]]; then
-	(cat ~/.cache/wal/sequences &)
+    (cat ~/.cache/wal/sequences &)
 fi
 
 # ALIASES
 gitprune() {
-	git fetch -p && for branch in $(git branch -vv | grep ': gone]' | awk '{print $1}'); do git branch -D $branch; done
+    git fetch -p && for branch in $(git branch -vv | grep ': gone]' | awk '{print $1}'); do git branch -D $branch; done
 }
 
 dockercd() {
-	cd $(docker volume inspect $1 | grep Mountpoint | sed -r 's/^\s*"Mountpoint": "(.+)".*$/\1/')
+    cd $(docker volume inspect $1 | grep Mountpoint | sed -r 's/^\s*"Mountpoint": "(.+)".*$/\1/')
 }
 
 svg2png() {
-	inkscape --export-type="png" $1
+    inkscape --export-type="png" $1
 }
 
 alias gch="git checkout"
