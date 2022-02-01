@@ -41,7 +41,8 @@ gitprune() {
 }
 
 dockercd() {
-    cd $(docker volume inspect $1 | grep Mountpoint | sed -r 's/^\s*"Mountpoint": "(.+)".*$/\1/')
+    DOCKERDIR=$(docker volume inspect $1 | grep Mountpoint | sed -r 's/^\s*"Mountpoint": "(.+)".*$/\1/')
+    sudo su -c "cd $DOCKERDIR; /usr/bin/zsh"
 }
 
 svg2png() {
