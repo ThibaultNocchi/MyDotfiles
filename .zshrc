@@ -20,7 +20,7 @@ export MANPAGER='nvim +Man!'
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 # OMZ PLUGINS
-plugins=(docker docker-compose kubectl node npm pip rust)
+plugins=(docker docker-compose kubectl node npm pip rust aws)
 
 # PLUGIN MANAGER
 if [[ ! -f "$HOME/.local/bin/sheldon" ]]; then
