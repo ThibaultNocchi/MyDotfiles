@@ -1,2 +1,4 @@
 #!/bin/sh
-wal -i /home/thibault/Pictures/BG -e --saturate 0.4
+NEWBG=$(ls /home/thibault/Pictures/BG/* |sort -R |tail -1)
+wal -i $NEWBG -e --saturate 0.4
+echo $NEWBG > $HOME/.current_bg
