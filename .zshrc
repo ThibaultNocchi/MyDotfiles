@@ -41,6 +41,10 @@ gitprune() {
 }
 
 dockercd() {
+    docker volume inspect $1 >> /dev/null
+    if [ $? -eq 1 ]; then
+        return 1
+    fi
     DOCKERDIR=$(docker volume inspect $1 | grep Mountpoint | sed -r 's/^\s*"Mountpoint": "(.+)".*$/\1/')
     sudo su -c "cd $DOCKERDIR; /usr/bin/zsh"
 }
