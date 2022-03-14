@@ -18,6 +18,7 @@ fi
 export EDITOR="nvim"
 export MANPAGER='nvim +Man!'
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
+export TERM=xterm-256color
 
 # OMZ PLUGINS
 plugins=(docker docker-compose kubectl node npm pip rust aws)
