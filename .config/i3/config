@@ -239,6 +239,7 @@ exec --no-startup-id picom --experimental-backends -b
 exec --no-startup-id /usr/local/bin/change_bg
 exec --no-startup-id playerctld daemon
 exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet
 exec --no-startup-id i3_nagbar_battery 20
 
 # MSI
