@@ -9,9 +9,10 @@ if [ -n $1 ] && [ "$1" = '-query' ]; then
 fi
 
 if [ "$CURRENT" = "fr" ]; then
-    setxkbmap -layout us intl
+    #setxkbmap -layout us intl
+		setxkbmap -layout us_qwerty-fr
     echo "Switched to: \"us intl\""
-		notify-send "Keyboard" "Switched to \"us intl\""
+		notify-send "Keyboard" "Switched to \"us_qwerty-fr\""
 elif [ "$CURRENT" = "us" ]; then
     setxkbmap -layout fr
     echo "Switched to: \"fr\""
