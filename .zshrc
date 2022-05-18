@@ -81,4 +81,5 @@ bindkey '^[Od' backward-word
 bindkey '^[Oc' forward-word
 
 # Source not commited file
+if [[ ! -f ~/.zshrc.env ]]; then touch ~/.zshrc.env; fi
 source ~/.zshrc.env
