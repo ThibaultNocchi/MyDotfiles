@@ -66,7 +66,8 @@
   "terminal.integrated.tabs.enabled": true,
   "files.associations": {
     "*.tf": "tf",
-    "*.hcl": "terragrunt"
+    "*.hcl": "terragrunt",
+    "*.tfvars": "tfvars"
   },
   "diffEditor.ignoreTrimWhitespace": false,
   "[javascript]": {

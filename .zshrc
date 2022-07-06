@@ -21,7 +21,7 @@ export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export TERM=xterm-256color
 
 # OMZ PLUGINS
-plugins=(docker docker-compose kubectl node npm pip rust aws)
+plugins=(docker docker-compose kubectl node npm pip rust aws terraform)
 
 # PLUGIN MANAGER
 if [[ ! -f "$HOME/.local/bin/sheldon" ]]; then
@@ -74,6 +74,7 @@ alias ll="ls -alhF"
 alias v="nvim"
 alias nvidia="DRI_PRIME=1"
 alias cat="bat -p"
+alias cat-cert="openssl x509 -noout -text -in"
 
 # BINDKEYS
 bindkey '^H' vi-backward-kill-word
