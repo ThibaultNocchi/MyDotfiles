@@ -17,6 +17,7 @@ general {
 
 order += "disk /"
 order += "wireless _first_"
+order += "ethernet _first_"
 order += "memory"
 order += "battery all"
 order += "cpu_temperature 0"
@@ -28,6 +29,11 @@ order += "tztime local"
 wireless _first_ {
 	format_up = "📶%quality %essid %ip "
 	format_down = "📶 🚫"
+}
+
+ethernet _first_ {
+	format_up = "🔗 %ip "
+	format_down = "🔗 🚫"
 }
 
 volume master {
