@@ -106,4 +106,5 @@
   },
   "i18n-ally.sortKeys": true,
   "editor.wordWrap": "on",
+  "files.autoSave": "off"
 }
