@@ -13,7 +13,7 @@ if [ "$CURRENT" = "fr" ]; then
 		setxkbmap -layout us_qwerty-fr
     echo "Switched to: \"us intl\""
 		notify-send "Keyboard" "Switched to \"us_qwerty-fr\""
-elif [ "$CURRENT" = "us" ]; then
+elif [ "$CURRENT" = "us_qwerty-fr" ]; then
     setxkbmap -layout fr
     echo "Switched to: \"fr\""
 		notify-send "Keyboard" "Switched to \"fr\""
