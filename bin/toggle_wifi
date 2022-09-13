@@ -1,3 +1,4 @@
 #!/bin/sh
 # https://askubuntu.com/questions/597116/how-to-disable-wireless-from-command-line/947893#947893
 nmcli radio wifi `nmcli r wifi | grep enabled -c | sed -e "s/1/off/" | sed -e "s/0/on/"`
+notify-send "Toggled WIFI"
