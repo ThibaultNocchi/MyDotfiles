@@ -275,3 +275,4 @@ bindsym $mod+Shift+s exec "i3-nagbar -t warning -m 'You pressed the shutdown sho
 bindsym $mod+F1 exec --no-startup-id /usr/local/bin/hdmi_enable
 bindsym $mod+F2 exec --no-startup-id /usr/local/bin/hdmi_disable 1
 bindsym $mod+F3 exec --no-startup-id /usr/local/bin/switch_kb_layout
+bindsym $mod+F4 exec --no-startup-id /usr/local/bin/toggle_wifi
