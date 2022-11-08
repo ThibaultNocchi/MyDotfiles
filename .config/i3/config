@@ -167,7 +167,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # resize window (you can also use the mouse for that)
 mode "resize" {
     # These bindings trigger as soon as you enter the resize mode
-    
+
     # Pressing left will shrink the window’s width.
     # Pressing right will grow the window’s width.
     # Pressing up will shrink the window’s height.
@@ -177,13 +177,13 @@ mode "resize" {
     bindsym l resize shrink height 10 px or 10 ppt
     #bindsym m resize grow width 10 px or 10 ppt
     bindcode 47 resize grow width 10 px or 10 ppt
-    
+
     # same bindings, but for the arrow keys
     bindsym Left resize shrink width 10 px or 10 ppt
     bindsym Down resize grow height 10 px or 10 ppt
     bindsym Up resize shrink height 10 px or 10 ppt
     bindsym Right resize grow width 10 px or 10 ppt
-    
+
     # back to normal: Enter or Escape or $mod+r
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -254,6 +254,9 @@ exec --no-startup-id xinput set-prop "SYNA2393:00 06CB:7A13 Touchpad" "libinput 
 exec --no-startup-id xinput set-prop "SYNA2393:00 06CB:7A13 Touchpad" "libinput Natural Scrolling Enabled" 1 # Natural scroll
 exec --no-startup-id xinput set-prop "SYNA2393:00 06CB:7A13 Touchpad" "libinput Accel Profile Enabled" 0 0 # Variable speed
 
+# Dell Latitude
+
+
 
 bindsym $mod+n exec firefox
 bindsym $mod+shift+n exec firefox -private-window
@@ -261,7 +264,7 @@ bindsym $mod+b exec thunar
 bindsym $mod+c exec /usr/bin/codium
 bindsym $mod+shift+c exec /usr/bin/codium "$(xcwd)"
 #bindsym $mod+x exec i3lock -i $(ls /home/thibault/Pictures/BG/*.png |sort -R |tail -1)
-bindsym $mod+x exec i3lockmore --image-fill $(ls /home/thibault/Pictures/BG/*.png |sort -R |tail -1) --blur --lock-icon ~/.config/i3/padlock.png
+bindsym $mod+x exec i3lockmore --image-fill $(ls ~/Pictures/BG/*.png |sort -R |tail -1) --blur --lock-icon ~/.config/i3/padlock.png
 bindsym XF86AudioPlay exec "playerctl --player=%any,firefox play-pause"
 bindsym XF86AudioNext exec "playerctl --player=%any,firefox next"
 bindsym XF86AudioPrev exec "playerctl --player=%any,firefox previous"
