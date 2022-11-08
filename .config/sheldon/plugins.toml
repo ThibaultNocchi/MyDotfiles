@@ -12,9 +12,6 @@
 
 shell = "zsh"
 
-[templates]
-completion = { value = 'mkdir -p "$ZSH/completions"; ln -f -s "{{ file }}" "$ZSH/completions/_{{ name }}"', each = true }
-
 [plugins]
 
 [plugins.zsh-syntax-highlighting]
