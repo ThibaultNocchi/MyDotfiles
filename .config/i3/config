@@ -242,20 +242,16 @@ exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id i3_nagbar_battery 20
 
+# Generic
+exec --no-startup-id xinput set-prop "$(xinput list --name-only | grep -i touchpad)" "libinput Tapping Enabled" 1 # Tap to click
+exec --no-startup-id xinput set-prop "$(xinput list --name-only | grep -i touchpad)" "libinput Natural Scrolling Enabled" 1 # Natural scroll
+exec --no-startup-id xinput set-prop "$(xinput list --name-only | grep -i touchpad)" "libinput Accel Profile Enabled" 0 0 # Variable speed
+
 # MSI
 exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Accel Speed" 0.55 # Accel speed
-exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1 # Tap to click
-exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Natural Scrolling Enabled" 1 # Natural scroll
-exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Accel Profile Enabled" 0 0 # Variable speed
 
 # Dell
 exec --no-startup-id xinput set-prop "SYNA2393:00 06CB:7A13 Touchpad" "libinput Accel Speed" 0.30 # Accel speed
-exec --no-startup-id xinput set-prop "SYNA2393:00 06CB:7A13 Touchpad" "libinput Tapping Enabled" 1 # Tap to click
-exec --no-startup-id xinput set-prop "SYNA2393:00 06CB:7A13 Touchpad" "libinput Natural Scrolling Enabled" 1 # Natural scroll
-exec --no-startup-id xinput set-prop "SYNA2393:00 06CB:7A13 Touchpad" "libinput Accel Profile Enabled" 0 0 # Variable speed
-
-# Dell Latitude
-
 
 
 bindsym $mod+n exec firefox
