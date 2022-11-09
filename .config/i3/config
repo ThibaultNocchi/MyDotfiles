@@ -253,6 +253,9 @@ exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Acce
 # Dell
 exec --no-startup-id xinput set-prop "SYNA2393:00 06CB:7A13 Touchpad" "libinput Accel Speed" 0.30 # Accel speed
 
+# Dell Latitude
+exec --no-startup-id xinput set-prop "DELL0A3E:00 0488:120A Touchpad" "libinput Accel Speed" 0.25 # Accel speed
+
 
 bindsym $mod+n exec firefox
 bindsym $mod+shift+n exec firefox -private-window
