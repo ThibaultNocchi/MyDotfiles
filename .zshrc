@@ -84,3 +84,6 @@ bindkey '^[Oc' forward-word
 # Source not commited file
 if [[ ! -f ~/.zshrc.env ]]; then touch ~/.zshrc.env; fi
 source ~/.zshrc.env
+
+# Export SSH Agent
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
