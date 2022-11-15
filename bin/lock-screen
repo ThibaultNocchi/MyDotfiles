@@ -1,0 +1,2 @@
+#!/bin/sh
+i3lockmore --image-fill $(ls ~/Pictures/BG/*.png |sort -R |tail -1) --blur --lock-icon ~/.config/i3/padlock.png
