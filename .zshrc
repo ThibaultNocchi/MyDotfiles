@@ -7,7 +7,7 @@ unsetopt appendhistory beep
 
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/thibault/.zshrc'
+zstyle :compinstall filename '~/.zshrc'
 
 # ENV MODIFICATION
 PATH=$PATH:/snap/bin:$HOME/bin:$HOME/.local/bin:/usr/local/go/bin
