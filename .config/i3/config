@@ -235,7 +235,7 @@ default_border none
 popup_during_fullscreen smart
 
 exec --no-startup-id autorandr -c
-exec --no-startup-id picom --experimental-backends -b
+exec --no-startup-id picom -b
 exec --no-startup-id /usr/local/bin/change_bg
 exec --no-startup-id playerctld daemon
 exec --no-startup-id nm-applet
