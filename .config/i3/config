@@ -31,8 +31,7 @@ font pango:SF-Mono-Powerline 9
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
-bindsym $mod+shift+Return exec urxvt -cd "`xcwd`"
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 #bindsym $mod+q kill

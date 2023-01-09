@@ -67,7 +67,8 @@
   "files.associations": {
     "*.tf": "tf",
     "*.hcl": "terragrunt",
-    "*.tfvars": "tfvars"
+    "*.tfvars": "tfvars",
+    "*.yml": "yaml"
   },
   "diffEditor.ignoreTrimWhitespace": false,
   "[javascript]": {
