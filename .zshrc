@@ -21,7 +21,7 @@ export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export TERM=xterm-256color
 
 # OMZ PLUGINS
-plugins=(docker docker-compose kubectl node npm pip rust aws terraform)
+plugins=(docker docker-compose kubectl node npm pip rust aws terraform pass fzf)
 
 # PLUGIN MANAGER
 if [[ ! -f "$HOME/.local/bin/sheldon" ]]; then
@@ -54,6 +54,16 @@ svg2png() {
     inkscape --export-type="png" $1
 }
 
+cert-against-key() {
+	CERT_MD5=$(openssl x509 -noout -modulus -in $1 | openssl md5)
+	KEY_MD5=$(openssl rsa -noout -modulus -in $2 | openssl md5)
+	if [[ "$CERT_MD5" == "$KEY_MD5" ]]; then
+		echo "OK"
+	else
+		echo "NOK"
+	fi
+}
+
 alias gch="git checkout"
 alias gpl="git pull --all --rebase && gpr"
 alias gph="git push"
@@ -75,6 +85,7 @@ alias v="nvim"
 alias nvidia="DRI_PRIME=1"
 alias cat="bat -p"
 alias cat-cert="openssl x509 -noout -text -in"
+alias grep5="grep -A5 -B5"
 
 # BINDKEYS
 bindkey '^H' vi-backward-kill-word

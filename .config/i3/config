@@ -31,6 +31,8 @@ font pango:SF-Mono-Powerline 9
 floating_modifier $mod
 
 # start a terminal
+# https://github.com/alacritty/alacritty/issues/782#issuecomment-1315519751
+bindsym $mod+Shift+Return exec alacritty msg create-window || alacritty
 bindsym $mod+Return exec alacritty
 
 # kill focused window
@@ -240,6 +242,7 @@ exec --no-startup-id playerctld daemon
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id i3_nagbar_battery 20
+exec --no-startup-id /usr/bin/lxqt-policykit-agent
 
 # Generic
 exec --no-startup-id xinput set-prop "$(xinput list --name-only | grep -i touchpad)" "libinput Tapping Enabled" 1 # Tap to click
@@ -265,9 +268,9 @@ bindsym $mod+x exec lock-screen
 bindsym XF86AudioPlay exec "playerctl --player=%any,firefox play-pause"
 bindsym XF86AudioNext exec "playerctl --player=%any,firefox next"
 bindsym XF86AudioPrev exec "playerctl --player=%any,firefox previous"
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 bindsym XF86MonBrightnessUp exec --no-startup-id /usr/bin/backlight_control +10
 bindsym XF86MonBrightnessDown exec --no-startup-id /usr/bin/backlight_control -10
 bindsym --release Print exec --no-startup-id maim -s ~/Pictures/print_screen_$(date +%F-%H-%M-%S).png
