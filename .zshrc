@@ -50,6 +50,10 @@ dockercd() {
     sudo su -c "cd $DOCKERDIR; /usr/bin/zsh"
 }
 
+_fzf_complete_dockercd() {
+	_fzf_complete -- "$@" < <(docker volume ls -q)
+}
+
 svg2png() {
     inkscape --export-type="png" $1
 }
@@ -64,6 +68,22 @@ cert-against-key() {
 	fi
 }
 
+csr-against-key() {
+	CSR_MD5=$(openssl req -noout -modulus -in $1 | openssl md5)
+	KEY_MD5=$(openssl rsa -noout -modulus -in $2 | openssl md5)
+	if [[ "$CSR_MD5" == "$KEY_MD5" ]]; then
+		echo "OK"
+	else
+		echo "NOK"
+	fi
+}
+
+code () {
+	codium $1
+	exit
+}
+
+
 alias gch="git checkout"
 alias gpl="git pull --all --rebase && gpr"
 alias gph="git push"
@@ -75,7 +95,6 @@ alias gpr="gitprune"
 alias gcl="git clean -fxd"
 alias sdn="shutdown now"
 alias sudo="sudo "
-alias code="codium"
 alias rs="rsync -azv --append --progress"
 alias python="python3"
 alias ncdu="ncdu" # I keep forgetting it
