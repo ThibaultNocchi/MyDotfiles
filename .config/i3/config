@@ -244,6 +244,7 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id i3_nagbar_battery 20
 exec --no-startup-id /usr/bin/lxqt-policykit-agent
 exec --no-startup-id /usr/bin/indicator-kdeconnect
+exec --no-startup-id /usr/bin/nextcloud
 
 # Generic
 exec --no-startup-id xinput set-prop "$(xinput list --name-only | grep -i touchpad)" "libinput Tapping Enabled" 1 # Tap to click
