@@ -1,4 +1,4 @@
 #!/bin/sh
 NEWBG=$(ls ~/Pictures/BG/* |sort -R |tail -1)
-wal -i $NEWBG -e --saturate 0.4
+wal -i $NEWBG --saturate 0.4
 echo $NEWBG > $HOME/.current_bg
