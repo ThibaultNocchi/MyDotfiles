@@ -1,111 +1,118 @@
 {
-  "window.menuBarVisibility": "toggle",
-  "workbench.colorTheme": "Monokai",
-  "editor.fontFamily": "'SF Mono Powerline','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-  "editor.fontSize": 13,
-  "editor.dragAndDrop": false,
-  "editor.cursorSmoothCaretAnimation": true,
-  "editor.minimap.enabled": false,
-  "files.autoGuessEncoding": true,
-  "files.hotExit": "off",
-  "files.insertFinalNewline": true,
-  "files.trimFinalNewlines": true,
-  "files.trimTrailingWhitespace": true,
-  "workbench.enableExperiments": false,
-  "workbench.editor.highlightModifiedTabs": true,
-  "workbench.settings.enableNaturalLanguageSearch": false,
-  "explorer.confirmDragAndDrop": false,
-  "search.showLineNumbers": true,
-  "terminal.external.linuxExec": "urxvt",
-  "terminal.integrated.copyOnSelection": true,
-  "editor.suggestSelection": "first",
-  "editor.formatOnSave": true,
-  "git.enableSmartCommit": true,
-  "git.rebaseWhenSync": true,
-  "eslint.alwaysShowStatus": true,
-  "vetur.format.enable": false,
-  "explorer.confirmDelete": false,
-  "git.confirmSync": false,
-  "C_Cpp.clang_format_fallbackStyle": "{\"BasedOnStyle\":\"Chromium\",\"ColumnLimit\":\"0\"}",
-  "polacode.backgroundColor": "white",
-  "polacode.transparentBackground": true,
-  "polacode.target": "snippet",
-  "polacode.shadow": "",
-  "git.autofetch": true,
-  "latex-workshop.intellisense.package.enabled": true,
-  "latex-workshop.latex.autoBuild.run": "never",
-  "prolog.dialect": "ecl",
-  "workbench.startupEditor": "newUntitledFile",
-  "vetur.completion.tagCasing": "initial",
-  "prettier.trailingComma": "none",
-  "prettier.arrowParens": "avoid",
-  "prolog.format.enabled": false,
-  "prolog.linter.run": "never",
-  "cSpell.language": "fr",
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "latex-workshop.message.update.show": false,
-  "java.configuration.checkProjectSettingsExclusions": false,
-  "java.project.importOnFirstTimeStartup": "automatic",
-  "editor.insertSpaces": false,
-  "[arm-template]": {
-    "editor.defaultFormatter": "msazurermtools.azurerm-vscode-tools"
-  },
-  "[nginx]": {
-    "editor.defaultFormatter": "ahmadalli.vscode-nginx-conf"
-  },
-  "[dockerfile]": {
-    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
-  },
-  "redhat.telemetry.enabled": false,
-  "workbench.editorAssociations": {
-    "*.ipynb": "jupyter.notebook.ipynb"
-  },
-  "jupyter.alwaysTrustNotebooks": true,
-  "terminal.integrated.tabs.enabled": true,
-  "files.associations": {
-    "*.tf": "tf",
-    "*.hcl": "terragrunt",
-    "*.tfvars": "tfvars",
-    "*.yml": "yaml"
-  },
-  "diffEditor.ignoreTrimWhitespace": false,
-  "[javascript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
-  "cSpell.enabled": false,
-  "[latex]": {
-    "editor.wordWrap": "on"
-  },
-  "volar.codeLens.pugTools": false,
-  "volar.formatting.printWidth": 120,
-  "volar.icon.finder": true,
-  "volar.icon.preview": true,
-  "editor.largeFileOptimizations": false,
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "azureFunctions.showProjectWarning": false,
-  "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "editor.tabSize": 2,
-  "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "puppet.editorService.formatOnType.maxFileSize": 0,
-  "volar.autoCompleteRefs": true,
-  "[vue]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "i18n-ally.sortKeys": true,
-  "editor.wordWrap": "on",
-  "files.autoSave": "off"
+	"window.menuBarVisibility": "toggle",
+	"workbench.colorTheme": "Monokai",
+	"editor.fontFamily": "'SF Mono Powerline','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+	"editor.fontSize": 13,
+	"editor.dragAndDrop": false,
+	"editor.cursorSmoothCaretAnimation": "on",
+	"editor.minimap.enabled": false,
+	"files.autoGuessEncoding": true,
+	"files.hotExit": "off",
+	"files.insertFinalNewline": true,
+	"files.trimFinalNewlines": true,
+	"files.trimTrailingWhitespace": true,
+	"workbench.enableExperiments": false,
+	"workbench.editor.highlightModifiedTabs": true,
+	"workbench.settings.enableNaturalLanguageSearch": false,
+	"explorer.confirmDragAndDrop": false,
+	"search.showLineNumbers": true,
+	"terminal.external.linuxExec": "urxvt",
+	"terminal.integrated.copyOnSelection": true,
+	"editor.suggestSelection": "first",
+	"editor.formatOnSave": true,
+	"git.enableSmartCommit": true,
+	"git.rebaseWhenSync": true,
+	"eslint.alwaysShowStatus": true,
+	"vetur.format.enable": false,
+	"explorer.confirmDelete": false,
+	"git.confirmSync": false,
+	"C_Cpp.clang_format_fallbackStyle": "{\"BasedOnStyle\":\"Chromium\",\"ColumnLimit\":\"0\"}",
+	"polacode.backgroundColor": "white",
+	"polacode.transparentBackground": true,
+	"polacode.target": "snippet",
+	"polacode.shadow": "",
+	"git.autofetch": true,
+	"latex-workshop.intellisense.package.enabled": true,
+	"latex-workshop.latex.autoBuild.run": "never",
+	"prolog.dialect": "ecl",
+	"workbench.startupEditor": "newUntitledFile",
+	"vetur.completion.tagCasing": "initial",
+	"prettier.trailingComma": "none",
+	"prettier.arrowParens": "avoid",
+	"prolog.format.enabled": false,
+	"prolog.linter.run": "never",
+	"cSpell.language": "fr",
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"latex-workshop.message.update.show": false,
+	"java.configuration.checkProjectSettingsExclusions": false,
+	"java.project.importOnFirstTimeStartup": "automatic",
+	"editor.insertSpaces": false,
+	"[arm-template]": {
+		"editor.defaultFormatter": "msazurermtools.azurerm-vscode-tools"
+	},
+	"[nginx]": {
+		"editor.defaultFormatter": "ahmadalli.vscode-nginx-conf"
+	},
+	"[dockerfile]": {
+		"editor.defaultFormatter": "ms-azuretools.vscode-docker"
+	},
+	"redhat.telemetry.enabled": false,
+	"workbench.editorAssociations": {
+		"*.ipynb": "jupyter.notebook.ipynb"
+	},
+	"jupyter.alwaysTrustNotebooks": true,
+	"terminal.integrated.tabs.enabled": true,
+	"files.associations": {
+		"*.tf": "terraform",
+		"*.hcl": "terragrunt",
+		"*.tfvars": "terraform",
+		"*.yml": "yaml"
+	},
+	"diffEditor.ignoreTrimWhitespace": false,
+	"[javascript]": {
+		"editor.defaultFormatter": "vscode.typescript-language-features"
+	},
+	"cSpell.enabled": false,
+	"[latex]": {
+		"editor.wordWrap": "on"
+	},
+	"volar.codeLens.pugTools": false,
+	"volar.formatting.printWidth": 120,
+	"volar.icon.finder": true,
+	"volar.icon.preview": true,
+	"editor.largeFileOptimizations": false,
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"azureFunctions.showProjectWarning": false,
+	"[jsonc]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	},
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"editor.tabSize": 2,
+	"[markdown]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"puppet.editorService.formatOnType.maxFileSize": 0,
+	"volar.autoCompleteRefs": true,
+	"[vue]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[css]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"i18n-ally.sortKeys": true,
+	"editor.wordWrap": "on",
+	"files.autoSave": "off",
+	"[yaml]": {
+		"editor.defaultFormatter": "redhat.vscode-yaml"
+	},
+	"git.terminalAuthentication": false,
+	"git.openRepositoryInParentFolders": "always",
+	"search.maxResults": null,
+	"terminal.integrated.enableMultiLinePasteWarning": false
 }
