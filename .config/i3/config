@@ -216,19 +216,19 @@ set_from_resource $color15 i3wm.color15
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-# bar {
-#     #status_command i3status
-#     status_command i3status | /usr/local/bin/playerctl_status.py
-# 		#status_command i3blocks
-#     position top
-#     colors {
-#         background $background
-#         statusline $foreground
-#         separator $color8
-#         focused_workspace $color7 $color5 $color7
-#         inactive_workspace $color8 $color0 $color8
-#     }
-# }
+ bar {
+     #status_command i3status
+     status_command i3status | /usr/local/bin/playerctl_status.py
+ 		#status_command i3blocks
+     position top
+     colors {
+         background $background
+         statusline $foreground
+         separator $color8
+         focused_workspace $color7 $color5 $color7
+         inactive_workspace $color8 $color0 $color8
+     }
+ }
 
 # Custom
 
@@ -236,8 +236,6 @@ workspace_auto_back_and_forth yes
 default_border none
 popup_during_fullscreen smart
 
-exec_always --no-startup-id polybar-msg cmd quit
-exec_always --no-startup-id polybar
 exec --no-startup-id autorandr -c
 exec --no-startup-id picom -b
 exec --no-startup-id /usr/local/bin/change_bg
@@ -248,6 +246,7 @@ exec --no-startup-id i3_nagbar_battery 20
 exec --no-startup-id /usr/bin/lxqt-policykit-agent
 exec --no-startup-id /usr/bin/indicator-kdeconnect
 exec --no-startup-id /usr/bin/nextcloud
+#exec_always --no-startup-id sleep 1; /usr/bin/polybar-msg cmd quit; /usr/bin/polybar
 
 # Generic
 exec --no-startup-id xinput set-prop "$(xinput list --name-only | grep -i touchpad)" "libinput Tapping Enabled" 1 # Tap to click
@@ -270,12 +269,12 @@ bindsym $mod+b exec thunar
 bindsym $mod+c exec /usr/bin/codium
 bindsym $mod+shift+c exec /usr/bin/codium "$(xcwd)"
 bindsym $mod+x exec lock-screen
-bindsym XF86AudioPlay exec "playerctl --player=%any,firefox play-pause"
-bindsym XF86AudioNext exec "playerctl --player=%any,firefox next"
-bindsym XF86AudioPrev exec "playerctl --player=%any,firefox previous"
-bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
-bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
-bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindsym XF86AudioPlay exec --no-startup-id "playerctl --player=%any,firefox play-pause"
+bindsym XF86AudioNext exec --no-startup-id "playerctl --player=%any,firefox next"
+bindsym XF86AudioPrev exec --no-startup-id "playerctl --player=%any,firefox previous"
+bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+bindsym XF86AudioLowerVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindsym XF86AudioMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 bindsym XF86MonBrightnessUp exec --no-startup-id /usr/bin/backlight_control +10
 bindsym XF86MonBrightnessDown exec --no-startup-id /usr/bin/backlight_control -10
 bindsym --release Print exec --no-startup-id maim -s ~/Pictures/print_screen_$(date +%F-%H-%M-%S).png
