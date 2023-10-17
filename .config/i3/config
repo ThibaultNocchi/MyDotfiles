@@ -249,18 +249,18 @@ exec --no-startup-id /usr/bin/nextcloud
 #exec_always --no-startup-id sleep 1; /usr/bin/polybar-msg cmd quit; /usr/bin/polybar
 
 # Generic
-exec --no-startup-id xinput set-prop "$(xinput list --name-only | grep -i touchpad)" "libinput Tapping Enabled" 1 # Tap to click
-exec --no-startup-id xinput set-prop "$(xinput list --name-only | grep -i touchpad)" "libinput Natural Scrolling Enabled" 1 # Natural scroll
-exec --no-startup-id xinput set-prop "$(xinput list --name-only | grep -i touchpad)" "libinput Accel Profile Enabled" 0 0 # Variable speed
+exec_always --no-startup-id xinput set-prop "$(xinput list --name-only | grep -i touchpad)" "libinput Tapping Enabled" 1 # Tap to click
+exec_always --no-startup-id xinput set-prop "$(xinput list --name-only | grep -i touchpad)" "libinput Natural Scrolling Enabled" 1 # Natural scroll
+exec_always --no-startup-id xinput set-prop "$(xinput list --name-only | grep -i touchpad)" "libinput Accel Profile Enabled" 0 0 # Variable speed
 
 # MSI
-exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Accel Speed" 0.55 # Accel speed
+exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Accel Speed" 0.55 # Accel speed
 
 # Dell
-exec --no-startup-id xinput set-prop "SYNA2393:00 06CB:7A13 Touchpad" "libinput Accel Speed" 0.30 # Accel speed
+exec_always --no-startup-id xinput set-prop "SYNA2393:00 06CB:7A13 Touchpad" "libinput Accel Speed" 0.30 # Accel speed
 
 # Dell Latitude
-exec --no-startup-id xinput set-prop "DELL0A3E:00 0488:120A Touchpad" "libinput Accel Speed" 0.25 # Accel speed
+exec_always --no-startup-id xinput set-prop "DELL0A3E:00 0488:120A Touchpad" "libinput Accel Speed" 0.25 # Accel speed
 
 
 bindsym $mod+n exec firefox
