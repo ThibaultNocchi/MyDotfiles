@@ -105,6 +105,7 @@ alias nvidia="DRI_PRIME=1"
 alias cat="bat -p"
 alias cat-cert="openssl x509 -noout -text -in"
 alias grep5="grep -A5 -B5"
+alias pacman-autoremove="sudo pacman -Qdttq | sudo pacman -Rs -"
 
 # BINDKEYS
 bindkey '^H' vi-backward-kill-word
