@@ -87,6 +87,7 @@ code () {
 alias gch="git checkout"
 alias gpl="git pull --all --rebase && gpr"
 alias gph="git push"
+alias gphnew='git push -u origin `git branch --show-current`'
 alias gap="git add -A"
 alias gst="git status"
 alias gcm="git commit -m"
