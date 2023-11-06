@@ -4,6 +4,7 @@
 import subprocess
 import sys
 import json
+import os
 
 client_map = {
     "spotify": {"color": "#82c91e", "icon": ""},
@@ -32,6 +33,9 @@ def read_line():
     except KeyboardInterrupt:
         sys.exit()
 
+def is_sunshine_active():
+    sunshine = subprocess.call(['systemctl', '--user', '--quiet', 'is-active', 'sunshine'])
+    return sunshine == 0
 
 def is_playing():
     """ Uses playerctl to detect is something is playing """
@@ -80,15 +84,21 @@ if __name__ == '__main__':
         # ignore comma at start of lines
         if line.startswith(','):
             line, prefix = line[1:], ','
+
+        j = json.loads(line)
+
         if is_playing():
-            j = json.loads(line)
             # insert information into the start of the json, but could be anywhere
             # CHANGE THIS LINE TO INSERT SOMETHING ELSE
             j.insert(
                 0, {'color': client_map[(get_player())]['color'], 'full_text': "{} {}".format(client_map[(get_player())]['icon'], get_playerctl_metadata()), 'name': 'playerctl'})
             # and echo back new encoded json
-            print_line(prefix+json.dumps(j))
-        else:
-            j = json.loads(line)
-            print_line(prefix+json.dumps(j))
-            # print_line(json.dumps(j))
+
+        if is_sunshine_active():
+            j.insert(0, {
+                'color': '#ff0000',
+                'full_text': "Sunshine is RUNNING",
+                'name': "sunshine"
+            })
+
+        print_line(prefix+json.dumps(j))
