@@ -87,6 +87,9 @@ if __name__ == '__main__':
 
         j = json.loads(line)
 
+        j = list(filter(lambda item: (item['full_text'] != "can't read temp"), j))
+        j = list(filter(lambda item: (item['full_text'] != "No battery"), j))
+
         if is_playing():
             # insert information into the start of the json, but could be anywhere
             # CHANGE THIS LINE TO INSERT SOMETHING ELSE
