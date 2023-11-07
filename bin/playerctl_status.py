@@ -108,7 +108,7 @@ if __name__ == '__main__':
 
         monit_response = monit()
         if monit_response is not False:
-            if monit_response == 0:
+            if monit_response == '0':
                 monit_color = '#55b502'
             else:
                 monit_color = '#b5020b'
