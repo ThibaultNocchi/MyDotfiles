@@ -37,6 +37,15 @@ def is_sunshine_active():
     sunshine = subprocess.call(['systemctl', '--user', '--quiet', 'is-active', 'sunshine'])
     return sunshine == 0
 
+def monit():
+    monit = subprocess.run([os.path.join(os.environ['HOME'], '.monit/monit.sh')],
+        capture_output = True,
+        text = True)
+    if monit.returncode == 0:
+        return monit.stdout.rstrip()
+    else:
+        return False
+
 def is_playing():
     """ Uses playerctl to detect is something is playing """
     status = subprocess.run(
@@ -96,6 +105,18 @@ if __name__ == '__main__':
             j.insert(
                 0, {'color': client_map[(get_player())]['color'], 'full_text': "{} {}".format(client_map[(get_player())]['icon'], get_playerctl_metadata()), 'name': 'playerctl'})
             # and echo back new encoded json
+
+        monit_response = monit()
+        if monit_response is not False:
+            if monit_response == 0:
+                monit_color = '#55b502'
+            else:
+                monit_color = '#b5020b'
+            j.insert(0, {
+                'color': monit_color,
+                'full_text': "Monit: {}".format(monit_response),
+                'name': "monit"
+            })
 
         if is_sunshine_active():
             j.insert(0, {
