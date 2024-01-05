@@ -117,5 +117,11 @@ bindkey '^[Oc' forward-word
 if [[ ! -f ~/.zshrc.env ]]; then touch ~/.zshrc.env; fi
 source ~/.zshrc.env
 
+# Source .d directory if existing
+if [[ ! -d ~/.zshrc.d ]]; then mkdir ~/.zshrc.d; fi
+for FILE in $(find ~/.zshrc.d -type f); do
+	source $FILE
+done
+
 # Export SSH Agent
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
