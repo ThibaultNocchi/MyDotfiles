@@ -70,7 +70,6 @@
 		"*.tfvars": "terraform",
 		"*.yml": "yaml"
 	},
-	"diffEditor.ignoreTrimWhitespace": false,
 	"[javascript]": {
 		"editor.defaultFormatter": "vscode.typescript-language-features"
 	},
@@ -114,5 +113,7 @@
 	"git.terminalAuthentication": false,
 	"git.openRepositoryInParentFolders": "always",
 	"search.maxResults": null,
-	"terminal.integrated.enableMultiLinePasteWarning": false
+	"terminal.integrated.enableMultiLinePasteWarning": false,
+	"terminal.integrated.scrollback": 10000,
+	"editor.stickyScroll.enabled": false
 }
