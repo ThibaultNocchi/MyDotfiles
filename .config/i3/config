@@ -273,7 +273,7 @@ bindsym $mod+shift+n exec firefox -private-window
 bindsym $mod+b exec thunar
 bindsym $mod+c exec /usr/bin/codium
 bindsym $mod+shift+c exec /usr/bin/codium "$(xcwd)"
-bindsym $mod+x exec lock-screen
+bindsym $mod+x exec lock-screen-and-disable-dunst
 bindsym XF86AudioPlay exec --no-startup-id "playerctl --player=%any,firefox play-pause"
 bindsym XF86AudioNext exec --no-startup-id "playerctl --player=%any,firefox next"
 bindsym XF86AudioPrev exec --no-startup-id "playerctl --player=%any,firefox previous"

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+dunstctl set-paused true
+lock-screen --nofork
+sleep 2 # sleep to display awaiting notifications only a few seconds after
+dunstctl set-paused false

@@ -1,5 +1,2 @@
 #!/bin/sh
-dunstctl set-paused true
-i3lockmore --image-fill $(ls ~/Pictures/BG/*.png |sort -R |tail -1) --blur --lock-icon ~/.config/i3/padlock.png -n
-sleep 2 # sleep to display awaiting notifications only a few seconds after
-dunstctl set-paused false
+i3lockmore --image-fill $(ls ~/Pictures/BG/*.png |sort -R |tail -1) --blur --lock-icon ~/.config/i3/padlock.png $@
