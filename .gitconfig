@@ -1,3 +1,5 @@
 [user]
 	name = Thibault Nocchi
 	email = 1619359+ThibaultNocchi@users.noreply.github.com
+[push]
+	autoSetupRemote = true
