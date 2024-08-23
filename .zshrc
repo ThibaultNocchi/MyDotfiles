@@ -50,8 +50,31 @@ dockercd() {
     sudo su -c "cd $DOCKERDIR; /usr/bin/zsh"
 }
 
+lhmount() {
+	PVC=$(kubectl get volumes.longhorn.io -A -o json | jq ".items | map(select(.status.state == \"attached\" and .status.currentNodeID == \"$HOST\")) | map({name: .status.kubernetesStatus.pvcName, pv: .metadata.name}) | map(select(.name == \"$1\"))")
+	NAME=$(jq -e -r 'first | .name' <<< "$PVC")
+	PV=$(jq -e -r 'first | .pv' <<< "$PVC")
+
+	if [[ "$NAME" == "null" ]] || [[ "$PV" == "null" ]]; then echo "PV not found, exiting"; return 1; fi 
+
+	mkdir -p /tmp/$NAME
+	sudo umount /tmp/$NAME
+	sudo mount /dev/longhorn/$PV /tmp/$NAME
+
+	echo PV mounted, waiting for CTRL+C
+	( trap exit SIGINT ; read -r -d '' _ </dev/tty )
+	echo
+	echo Unmounting PV
+
+	sudo umount /tmp/$NAME
+}
+
 _fzf_complete_dockercd() {
 	_fzf_complete -- "$@" < <(docker volume ls -q)
+}
+
+_fzf_complete_lhmount() {
+	_fzf_complete -- "$@" < <(kubectl get volumes.longhorn.io -A -o json | jq -r ".items | map(select(.status.state == \"attached\" and .status.currentNodeID == \"$HOST\")) | map(.status.kubernetesStatus.pvcName) | .[]")
 }
 
 svg2png() {
