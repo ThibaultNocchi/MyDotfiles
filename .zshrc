@@ -128,6 +128,7 @@ alias v="nvim"
 alias nvidia="DRI_PRIME=1"
 alias cat="bat -p"
 alias cat-cert="openssl x509 -noout -text -in"
+alias cat-csr="openssl req -noout -text -in"
 alias grep5="grep -A5 -B5"
 alias pacman-autoremove="sudo pacman -Qdttq | sudo pacman -Rs -"
 
@@ -135,10 +136,6 @@ alias pacman-autoremove="sudo pacman -Qdttq | sudo pacman -Rs -"
 bindkey '^H' vi-backward-kill-word
 bindkey '^[Od' backward-word
 bindkey '^[Oc' forward-word
-
-# Source not commited file
-if [[ ! -f ~/.zshrc.env ]]; then touch ~/.zshrc.env; fi
-source ~/.zshrc.env
 
 # Source .d directory if existing
 if [[ ! -d ~/.zshrc.d ]]; then mkdir ~/.zshrc.d; fi
