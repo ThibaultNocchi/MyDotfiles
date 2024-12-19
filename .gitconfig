@@ -3,3 +3,5 @@
 	email = 1619359+ThibaultNocchi@users.noreply.github.com
 [push]
 	autoSetupRemote = true
+[credential]
+	helper = /usr/lib/git-core/git-credential-libsecret
