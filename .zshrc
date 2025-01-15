@@ -106,6 +106,12 @@ code () {
 	exit
 }
 
+wait-for-ssh () {
+  while ! ssh $1; do
+		echo Retrying in 5s...
+		sleep 5
+	done
+}
 
 alias gch="git checkout"
 alias gpl="git pull --all --rebase && gpr"
