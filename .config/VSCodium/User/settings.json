@@ -68,7 +68,8 @@
 		"*.tf": "terraform",
 		"*.hcl": "terragrunt",
 		"*.tfvars": "terraform",
-		"*.yml": "yaml"
+		"*.yml": "yaml",
+		"*.j2": "ansible-jinja"
 	},
 	"[javascript]": {
 		"editor.defaultFormatter": "vscode.typescript-language-features"
@@ -108,12 +109,17 @@
 	"editor.wordWrap": "on",
 	"files.autoSave": "off",
 	"[yaml]": {
-		"editor.defaultFormatter": "redhat.vscode-yaml"
+		"editor.defaultFormatter": "redhat.vscode-yaml",
+		"diffEditor.ignoreTrimWhitespace": false
 	},
 	"git.terminalAuthentication": false,
 	"git.openRepositoryInParentFolders": "always",
 	"search.maxResults": null,
 	"terminal.integrated.enableMultiLinePasteWarning": false,
 	"terminal.integrated.scrollback": 10000,
-	"editor.stickyScroll.enabled": false
+	"editor.stickyScroll.enabled": false,
+	"diffEditor.ignoreTrimWhitespace": false,
+	"vs-kubernetes": {
+		"vs-kubernetes.crd-code-completion": "enabled"
+	}
 }
