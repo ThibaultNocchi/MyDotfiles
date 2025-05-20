@@ -113,6 +113,10 @@ wait-for-ssh () {
 	done
 }
 
+curl-cert-expire () {
+	curl -vI $1 2>&1 | grep expire
+}
+
 alias gch="git checkout"
 alias gpl="git pull --all --rebase && gpr"
 alias gph="git push"
