@@ -69,7 +69,8 @@
 		"*.hcl": "terragrunt",
 		"*.tfvars": "terraform",
 		"*.yml": "yaml",
-		"*.j2": "ansible-jinja"
+		"*.j2": "ansible-jinja",
+		"*.gotmpl": "yaml"
 	},
 	"[javascript]": {
 		"editor.defaultFormatter": "vscode.typescript-language-features"
@@ -121,5 +122,8 @@
 	"diffEditor.ignoreTrimWhitespace": false,
 	"vs-kubernetes": {
 		"vs-kubernetes.crd-code-completion": "enabled"
-	}
+	},
+	"yaml.customTags": [
+		"!vault scalar"
+	]
 }

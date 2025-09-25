@@ -55,7 +55,7 @@ lhmount() {
 	NAME=$(jq -e -r 'first | .name' <<< "$PVC")
 	PV=$(jq -e -r 'first | .pv' <<< "$PVC")
 
-	if [[ "$NAME" == "null" ]] || [[ "$PV" == "null" ]]; then echo "PV not found, exiting"; return 1; fi 
+	if [[ "$NAME" == "null" ]] || [[ "$PV" == "null" ]]; then echo "PV not found, exiting"; return 1; fi
 
 	mkdir -p /tmp/$NAME
 	sudo umount /tmp/$NAME
@@ -115,6 +115,21 @@ wait-for-ssh () {
 
 curl-cert-expire () {
 	curl -vI $1 2>&1 | grep expire
+}
+
+bwunlock () {
+	if [[ -z "$BW_SESSION" ]]; then
+		export BW_SESSION="$(bw unlock --raw)"
+	fi
+}
+
+bwsearch () {
+	bwunlock
+	bw list items --search $1 | jq '.[] | {name, username: .login.username, password: .login.password}'
+}
+
+_fzf_complete_bwsearch() {
+	_fzf_complete -- "$@" < <(bw list items | jq -r '.[].name')
 }
 
 alias gch="git checkout"
