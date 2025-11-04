@@ -67,6 +67,7 @@ lhmount() {
 	echo Unmounting PV
 
 	sudo umount /tmp/$NAME
+	sudo rmdir /tmp/$NAME
 }
 
 _fzf_complete_dockercd() {
