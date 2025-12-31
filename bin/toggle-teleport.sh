@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-mapfile -t FILES < <(find ~/.tsh -maxdepth 1 -type f -name '*.yaml' -print0 | xargs -0 basename -s .yaml)
+FILES=(`find ~/.tsh -maxdepth 1 -type f -name '*.yaml' -print0 | xargs -0 basename -s .yaml`)
 CURRENT=$(cat ~/.tsh/current-profile)
 
 echo Available profiles: ${FILES[*]}
