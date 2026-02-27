@@ -250,8 +250,10 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id i3_nagbar_battery 10
 exec --no-startup-id /usr/bin/lxqt-policykit-agent
 exec --no-startup-id /usr/bin/indicator-kdeconnect
-exec --no-startup-id /usr/bin/nextcloud
+exec --no-startup-id /usr/bin/nextcloud --logfile /home/tnocchi/.nextcloud.log
 #exec_always --no-startup-id sleep 1; /usr/bin/polybar-msg cmd quit; /usr/bin/polybar
+
+exec_always --no-startup-id /usr/bin/xss-lock /usr/local/bin/lock-screen-and-disable-dunst
 
 # Generic
 exec_always --no-startup-id xinput set-prop "$(xinput list --name-only | grep -i touchpad)" "libinput Tapping Enabled" 1 # Tap to click
@@ -273,7 +275,7 @@ bindsym $mod+shift+n exec firefox -private-window
 bindsym $mod+b exec thunar
 bindsym $mod+c exec /usr/bin/codium
 bindsym $mod+shift+c exec /usr/bin/codium "$(xcwd)"
-bindsym $mod+x exec lock-screen-and-disable-dunst
+bindsym $mod+x exec /usr/bin/loginctl lock-session
 bindsym $mod+o exec obsidian
 bindsym XF86AudioPlay exec --no-startup-id "playerctl --player=%any,firefox play-pause"
 bindsym XF86AudioNext exec --no-startup-id "playerctl --player=%any,firefox next"
