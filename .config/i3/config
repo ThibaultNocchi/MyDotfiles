@@ -253,7 +253,7 @@ exec --no-startup-id /usr/bin/indicator-kdeconnect
 exec --no-startup-id /usr/bin/nextcloud --logfile /home/tnocchi/.nextcloud.log
 #exec_always --no-startup-id sleep 1; /usr/bin/polybar-msg cmd quit; /usr/bin/polybar
 
-exec_always --no-startup-id /usr/bin/xss-lock /usr/local/bin/lock-screen-and-disable-dunst
+exec_always --no-startup-id /usr/bin/xss-lock --transfer-sleep-lock -- /usr/local/bin/lock-screen-and-disable-dunst
 exec_always --no-startup-id /usr/bin/xset s 300 300
 
 # Generic
