@@ -157,6 +157,7 @@ alias cat-cert="openssl x509 -noout -text -in"
 alias cat-csr="openssl req -noout -text -in"
 alias grep5="grep -A5 -B5"
 alias pacman-autoremove="sudo pacman -Qdttq | sudo pacman -Rs -"
+alias gopro-start="sudo gopro webcam -a -f narrow -p enp -n"
 
 # BINDKEYS
 bindkey '^H' vi-backward-kill-word
